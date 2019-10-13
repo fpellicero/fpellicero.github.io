@@ -1,0 +1,8 @@
+@import "~react-bulma-components/src/index.sass";
+
+.main-container__box {
+    @media (max-width: $tablet) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
