@@ -1,8 +1,9 @@
 import * as React from "react";
 import clsx from "clsx";
 import { Content, Modal, Button, Section } from "react-bulma-components";
+import { render } from "ink";
 
-interface ITimelineProps extends React.HTMLProps<HTMLDivElement> {}
+interface ITimelineProps extends React.HTMLProps<HTMLDivElement> { }
 const Timeline = ({ children, className, ...props }: ITimelineProps) => (
   <div className={`timeline ${className}`.trim()}>{children}</div>
 )
@@ -24,29 +25,25 @@ const TimelineItem = ({ children, color, marker, ...props }: ITimelineItemProps)
   )
 }
 
-const TimelineItemDetails = ({children}) => {
-  const media = window.matchMedia("(max-width: 768px)");
-  
-  const [isMobile, setIsMobile] = React.useState(media.matches);
+const TimelineItemDetails = ({ children }) => {
+
   const [isOpen, setIsOpen] = React.useState(false);
-  
-  media.addListener(() => {
-    setIsMobile(media.matches);
-    setIsOpen(false);
-  });
-  
-  if (isMobile) {
-    return (
-      <>
-        <Button paddingless size="small" text onClick={() => setIsOpen(true)}>
-          See more
-        </Button>
-        <Modal 
-          show={isOpen} 
+
+  const renderDetail = () => {
+    if (!isOpen) {
+      return null;
+    }
+
+    const media = window.matchMedia("(max-width: 768px)");
+
+    if (media.matches) {
+      return (
+        <Modal
+          show={isOpen}
           onClose={() => setIsOpen(false)}
           closeOnBlur={true}
         >
-          <Modal.Content style={{background: "white"}}>
+          <Modal.Content style={{ background: "white" }}>
             <Section>
               <Content>
                 {children}
@@ -54,19 +51,23 @@ const TimelineItemDetails = ({children}) => {
             </Section>
           </Modal.Content>
         </Modal>
-      </>
-    )
+      );
+    }
+
+    return (
+      <div style={{ textAlign: "left" }}>
+        <hr />
+        {children}
+      </div>
+    );
   }
 
   return (
     <>
-      <Button paddingless size="small " text onClick={() => setIsOpen(!isOpen)}>
+      <Button paddingless size="small" text onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? "See less" : "See more"}
       </Button>
-      {isOpen && <div style={{textAlign: "left"}} onClick={() => setIsOpen(false)}>
-        <hr />
-        {children}
-      </div>}
+      {renderDetail()}
     </>
   )
 }

@@ -1,4 +1,22 @@
-@import "~react-bulma-components/src/index.sass";
+// Import only what you need from Bulma
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/base/_all.sass";
+@import "~bulma/sass/grid/columns.sass";
+@import "~bulma/sass/elements/button.sass";
+@import "~bulma/sass/elements/container.sass";
+@import "~bulma/sass/elements/title.sass";
+@import "~bulma/sass/elements/progress.sass";
+@import "~bulma/sass/elements/image.sass";
+@import "~bulma/sass/elements/content.sass";
+@import "~bulma/sass/elements/tag.sass";
+@import "~bulma/sass/components/media.sass";
+@import "~bulma/sass/components/modal.sass";
+@import "~bulma/sass/layout/section.sass";
+@import "~bulma/sass/elements/box.sass";
+
+@import "~bulma-timeline/src/sass/index.sass";
+
+// @import "~bulma/sass/"
 
 .main-container__box {
     @media (max-width: $tablet) {

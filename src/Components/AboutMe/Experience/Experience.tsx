@@ -1,6 +1,5 @@
 import React from "react"
 import { Heading, Section, Container, Image } from "react-bulma-components"
-import "bulma-timeline/dist/css/bulma-timeline.min.css"
 import tiendeoLogo from "./tiendeo_icon.png"
 import Timeline from "../../Timeline/Timeline"
 

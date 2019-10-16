@@ -13,6 +13,6 @@ module.exports = {
       options: {
         includePaths: ["./src"],
       },
-    }
-  ]
+    },
+  ],
 }

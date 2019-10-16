@@ -26,25 +26,22 @@ const EducationItem = ({
 }: IEducationItem) => {
   return (
     <Columns.Column size="half">
-      <Card>
-        <Card.Header></Card.Header>
-        <Card.Content>
-          <Media>
-            <Media.Item renderAs="figure" position="left">
-              <Image size={48} alt="64x64" src={logo} />
-            </Media.Item>
-            <Media.Item>
-              <Heading renderAs="h6" size={6}>
-                {heading}
-              </Heading>
-              <Heading renderAs="h6" subtitle size={6}>
-                {subheading}
-              </Heading>
-            </Media.Item>
-          </Media>
-          <Content className="is-small">{children}</Content>
-        </Card.Content>
-      </Card>
+          <Box>
+            <Media>
+              <Media.Item renderAs="figure" position="left">
+                <Image size={48} alt="64x64" src={logo} />
+              </Media.Item>
+              <Media.Item>
+                <Heading renderAs="h6" size={6}>
+                  {heading}
+                </Heading>
+                <Heading renderAs="h6" subtitle size={6}>
+                  {subheading}
+                </Heading>
+              </Media.Item>
+            </Media>
+            <Content className="is-small">{children}</Content>
+          </Box>
     </Columns.Column>
   )
 }

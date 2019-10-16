@@ -1,5 +1,4 @@
 import React from "react";
-import 'react-bulma-components/dist/react-bulma-components.min.css';
 import "../main.scss";
 import {Heading, Section, Container} from "react-bulma-components";
 import Skills from "../Components/AboutMe/Skills/Skills";
