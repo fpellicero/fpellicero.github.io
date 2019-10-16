@@ -18,10 +18,10 @@ const Skill = ({name, value}: IProps) => {
         anime({
             targets: animationTarget,
             current: value,
-            duration: 1500,
+            duration: 1000,
             cycles: 1000,
             round: 1,
-            easing: "easeInOutQuad",
+            easing: "easeOutCirc",
             update: function() { setCurrentValue(animationTarget.current)},
         })
     }, [value])
@@ -45,8 +45,10 @@ const Skills = () => {
     const skills = {
         "React": 1000,
         "Redux": 900,
-        "Typescript": 700,
-        "Awesomeness": 606
+        "Typescript": 900,
+        "Webpack": 800,
+        "Rollup.js": 700,
+        "Docker": 700,
     };
 
     const renderSkills = () => Object.keys(skills)

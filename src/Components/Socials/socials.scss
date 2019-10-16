@@ -1,0 +1,10 @@
+.socials {
+    display: flex;
+    justify-content: center;
+    
+    &__item {
+        font-size: 1.5rem;
+        color: black;
+        margin: 0 15px;
+    }
+}

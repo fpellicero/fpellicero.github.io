@@ -1,14 +1,15 @@
 $logo-height: 128px;
 
 .navigation-bar {
+    display: flex;
+
     &__logo {
         margin: auto;
         width: $logo-height;
         height: $logo-height;
-        // position: sticky;
-        // top: $logo-height/2;
         transform: translateY(-$logo-height/2);
         margin-bottom: -$logo-height/2;
+
         & > img {
             border-radius: 100%;
             box-shadow: 0 0 5px black;

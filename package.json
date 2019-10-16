@@ -17,6 +17,7 @@
     "animejs": "^3.1.0",
     "bulma-timeline": "^3.0.4",
     "clsx": "^1.0.4",
+    "font-awesome": "^4.7.0",
     "gatsby": "^2.15.34",
     "gatsby-plugin-react-helmet": "^3.1.11",
     "gatsby-plugin-typescript": "^2.1.12",
