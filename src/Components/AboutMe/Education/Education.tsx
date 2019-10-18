@@ -48,7 +48,7 @@ const EducationItem = ({
 
 const Education = () => {
   return (
-    <Section>
+    <>
       <Heading size={3}>Education</Heading>
       <Columns>
         <EducationItem
@@ -68,7 +68,7 @@ const Education = () => {
           }
         />
       </Columns>
-    </Section>
+    </>
   )
 }
 

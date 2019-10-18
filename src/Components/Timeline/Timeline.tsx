@@ -1,6 +1,6 @@
 import * as React from "react";
 import clsx from "clsx";
-import { Content, Modal, Button, Section } from "react-bulma-components";
+import { Content, Modal, Button, Section, Heading } from "react-bulma-components";
 import { render } from "ink";
 
 interface ITimelineProps extends React.HTMLProps<HTMLDivElement> { }
@@ -25,7 +25,7 @@ const TimelineItem = ({ children, color, marker, ...props }: ITimelineItemProps)
   )
 }
 
-const TimelineItemDetails = ({ children }) => {
+const TimelineItemDetails = ({ title, subtitle, children }) => {
 
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -42,10 +42,18 @@ const TimelineItemDetails = ({ children }) => {
           show={isOpen}
           onClose={() => setIsOpen(false)}
           closeOnBlur={true}
+          showClose={false}
         >
           <Modal.Content style={{ background: "white" }}>
             <Section>
               <Content>
+                <Heading renderAs="h3">
+                  {title}
+                </Heading>
+                <Heading subtitle renderAs="h3" size={6}>
+                  {subtitle}
+                </Heading>
+                <hr />
                 {children}
               </Content>
             </Section>

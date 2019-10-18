@@ -12,6 +12,7 @@
 @import "~bulma/sass/components/media.sass";
 @import "~bulma/sass/components/modal.sass";
 @import "~bulma/sass/layout/section.sass";
+@import "~bulma/sass/layout/hero.sass";
 @import "~bulma/sass/elements/box.sass";
 
 @import "~bulma-timeline/src/sass/index.sass";
@@ -19,8 +20,43 @@
 // @import "~bulma/sass/"
 
 .main-container__box {
+    padding: 0;
     @media (max-width: $tablet) {
         padding-left: 0;
         padding-right: 0;
+    }
+}
+
+$logo-height: 128px;
+.navigation-bar {
+    display: flex;
+
+    &__logo {
+        margin: auto;
+        width: $logo-height;
+        height: $logo-height;
+        transform: translateY(-$logo-height/2);
+        margin-bottom: -$logo-height/2;
+        
+        & > img {
+            background: $light;
+            border-radius: 100%;
+            box-shadow: 0 0 5px $dark;
+        }
+    }
+}
+
+.tag-skills {
+    margin-bottom: 0 !important;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    
+    &__wrapper {
+        justify-content: center;
+
+        & > .has-addons {
+            margin-bottom: 0;
+            margin-right: 0.5rem;
+        }
     }
 }

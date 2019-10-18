@@ -12,7 +12,10 @@ const Layout = ({children}) => (
             <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no" />
         </Helmet>
         <Columns className="main-container" centered={true}>
-            <Columns.Column size={10}>
+            <Columns.Column
+                tablet={{size: 10}} 
+                widescreen={{size: 8}}
+            >
                 <Box className="main-container__box">
                     <NavigationBar />
                     {children}
