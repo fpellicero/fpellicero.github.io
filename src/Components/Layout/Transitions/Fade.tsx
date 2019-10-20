@@ -20,7 +20,7 @@ const transitionStyles = {
 const Fade = ({ children }) => (
     <Transition
         in={true}
-        appear={true}
+        appear={typeof window !== "undefined"}
         timeout={duration}
     >
         {state => (
