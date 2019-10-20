@@ -7,9 +7,10 @@ import Education from "../Components/AboutMe/Education/Education";
 import Socials from "../Components/AboutMe/Socials/Socials";
 import TagsSkills from "../Components/AboutMe/Skills/TagsSkills";
 import Summary from "../Components/AboutMe/Summary/Summary";
+import { EPages } from "../utils/EPages";
 
 export default () => (
-    <Layout>
+    <Layout currentPage={EPages.AboutMe}>
         <TagsSkills />
         <Container textAlignment="centered">
             <Hero color="light">

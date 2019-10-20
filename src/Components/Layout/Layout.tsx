@@ -1,13 +1,18 @@
 import React from "react";
 import { Box, Columns } from "react-bulma-components";
 import Helmet from "react-helmet";
-import "../main.scss";
+import "../../main.scss";
 import "./layout.scss";
 import "font-awesome/css/font-awesome.min.css";
 import NavigationBar from "./NavigationBar/NavigationBar";
+import { EPages } from "../../utils/EPages";
 
+interface ILayoutProps {
+    children: React.ReactNode;
+    currentPage: EPages;
+}
 
-const Layout = ({children}) => (
+const Layout = ({children, currentPage}: ILayoutProps) => (
     <>
         <Helmet>
             <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no" />
@@ -18,7 +23,7 @@ const Layout = ({children}) => (
                 widescreen={{size: 8}}
             >
                 <Box className="main-container__box">
-                    <NavigationBar />
+                    <NavigationBar currentPage={currentPage}/>
                     {children}
                 </Box>
             </Columns.Column>

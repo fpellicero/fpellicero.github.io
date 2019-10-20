@@ -5,12 +5,13 @@ import { Content, Section, Heading, Card, Columns, Tag } from "react-bulma-compo
 import arkapongImage from "../Components/Portfolio/arkapong.png";
 import PortfolioCard from "../Components/Portfolio/PortfolioCard";
 import usePortfolioItems from "../hooks/usePortfolioItems";
+import { EPages } from "../utils/EPages";
 
 export default () => {
     const items = usePortfolioItems();
         
     return (
-        <Layout>
+        <Layout currentPage={EPages.Portfolio}>
             <Content>
                 <Section>
                     <Heading>
