@@ -25,7 +25,7 @@ const Layout = ({children, currentPage}: ILayoutProps) => (
             >
                 <Box className="main-container__box">
                     <NavigationBar currentPage={currentPage}/>
-                    <Fade>
+                    <Fade key={currentPage}>
                         {children}
                     </Fade>
                     <Footer>
