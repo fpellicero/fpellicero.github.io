@@ -32,13 +32,11 @@ export default () => {
                 </Section>
 
                 <Section>
-                    <Columns centered>
-                        {items.map(({id, name, description}) => (
+                    <Columns className="is-mobile" centered>
+                        {items.map((item) => (
                             <PortfolioCard
-                                key={id}
-                                name={name}
-                                description={description}
-                                imageSrc=""
+                                key={item.id}
+                                {...item}
                             />
                         ))}
                         

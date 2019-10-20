@@ -1,4 +1,3 @@
-import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
 interface IPortfolioItemsQueryResult {
@@ -12,7 +11,12 @@ interface IPortfolioItemsQueryResult {
 export interface IPortfolioItem {
     id: string;
     name: string;
+    publicUrl: string;
+    repositoryUrl: string;
     description: string[];
+    image: {
+        publicURL: string;
+    }
 }
 
 const usePortfolioItems = (): IPortfolioItem[] => {
@@ -22,8 +26,13 @@ const usePortfolioItems = (): IPortfolioItem[] => {
                 edges {
                     node {
                         id
-                        name,
+                        name
+                        publicUrl
+                        repositoryUrl
                         description
+                        image {
+                            publicURL
+                        }
                     }
                 }
             }
