@@ -11,6 +11,8 @@
 @import "~bulma/sass/elements/tag.sass";
 @import "~bulma/sass/components/media.sass";
 @import "~bulma/sass/components/modal.sass";
+@import "~bulma/sass/components/card.sass";
+@import "~bulma/sass/components/tabs.sass";
 @import "~bulma/sass/layout/section.sass";
 @import "~bulma/sass/layout/hero.sass";
 @import "~bulma/sass/elements/box.sass";
@@ -19,11 +21,14 @@
 
 // @import "~bulma/sass/"
 
-.main-container__box {
-    padding: 0;
-    @media (max-width: $tablet) {
-        padding-left: 0;
-        padding-right: 0;
+.main-container {
+    min-height: 100vh;
+    &__box {
+        padding: 0;
+        @media (max-width: $tablet) {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 }
 

@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Arkapong",
+        "description": [
+            "Arkanoid and Pong game mashup, built using <a href='https://phaser.io/' target='_blank'>Phaser</a> and Typescript"
+        ]
+    },
+    {
+        "name": "Flappy Bird",
+        "description": [
+            "The popular Flappy Bird game, just with different sprites. Built with <a href='https://phaser.io/' target='_blank'>Phaser</a> and Typescript"
+        ]
+    }
+]
