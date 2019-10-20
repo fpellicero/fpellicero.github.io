@@ -9,9 +9,9 @@ const PortfolioCard = ({image, description, name, publicUrl, repositoryUrl}: IPo
             desktop={{size: "one-third"}}
         >    
             <Card>
-                <Card.Image src={image.publicURL}/>
+                <Card.Image size="4by3"  src={image.publicURL}/>
                 <Card.Content>
-                    <Heading size={4}>
+                    <Heading size={4} textAlignment="centered">
                         {name}
                     </Heading>
                     {

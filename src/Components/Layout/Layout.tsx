@@ -1,11 +1,12 @@
 import React from "react";
-import { Box, Columns } from "react-bulma-components";
+import { Box, Columns, Footer, Content } from "react-bulma-components";
 import Helmet from "react-helmet";
 import "../../main.scss";
 import "./layout.scss";
 import "font-awesome/css/font-awesome.min.css";
 import NavigationBar from "./NavigationBar/NavigationBar";
 import { EPages } from "../../utils/EPages";
+import Fade from "./Transitions/Fade";
 
 interface ILayoutProps {
     children: React.ReactNode;
@@ -24,7 +25,23 @@ const Layout = ({children, currentPage}: ILayoutProps) => (
             >
                 <Box className="main-container__box">
                     <NavigationBar currentPage={currentPage}/>
-                    {children}
+                    <Fade>
+                        {children}
+                    </Fade>
+                    <Footer>
+                        <Content textAlignment="centered">
+                            <div>
+                                Built with <i className="fa fa-heart"></i> with GatsbyJS and Bulma.io
+                            </div>
+                            <div>
+                                You can check the source for this page on {" "}
+                                <a href="https://github.com/fpellicero/fpellicero.github.io">
+                                    <i className="fa fa-github"/>{" "}
+                                    Github
+                                </a>
+                            </div>
+                        </Content>
+                    </Footer>
                 </Box>
             </Columns.Column>
         </Columns>

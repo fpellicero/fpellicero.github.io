@@ -16,5 +16,14 @@
         "description": [
             "The popular Flappy Bird game, just with different sprites. Built with <a href='https://phaser.io/' target='_blank'>Phaser</a> and Typescript"
         ]
+    },
+    {
+        "name": "Untitled Arcade Game",
+        "image": "./untitled-arcade-game.png",
+        "repositoryUrl": "",
+        "publicUrl": "https://javascript-arcade-game.herokuapp.com/",
+        "description": [
+            "A simple top-down shooter built in plain old ES5 and no framework."
+        ]
     }
 ]
