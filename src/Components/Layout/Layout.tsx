@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Columns } from "react-bulma-components";
 import Helmet from "react-helmet";
+import "../main.scss";
 import "./layout.scss";
 import "font-awesome/css/font-awesome.min.css";
 import NavigationBar from "./NavigationBar/NavigationBar";

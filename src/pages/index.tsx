@@ -1,5 +1,4 @@
 import React from "react";
-import "../main.scss";
 import {Heading, Section, Container, Hero} from "react-bulma-components";
 import Skills from "../Components/AboutMe/Skills/ProgressSkills";
 import Timeline from "../Components/AboutMe/Experience/Experience";
