@@ -11,26 +11,43 @@ const defaultStyle = {
 }
 
 const transitionStyles = {
-    entering: { opacity: 1, transform: "" },
+    entering: { },
     entered: { opacity: 1, transform: "" },
-    exiting: { opacity: 0, transform: "translate3d(0, 25px, 0)"},
-    exited: { opacity: 0, transform: "translate3d(0, 25px, 0)"},
+    exiting: { },
+    exited: { },
 };
 
-const Fade = ({ children }) => (
+interface IFadeProps extends React.HTMLProps<HTMLDivElement> {
+    renderAs?: any;
+}
+const Fade = ({ 
+    children, 
+    style = {},
+    renderAs = "div",
+    ...props
+}: IFadeProps) => (
     <Transition
         in={true}
-        appear={typeof window !== "undefined"}
-        timeout={duration}
+        appear={true}
+        timeout={10}
+        exit={true}
     >
-        {state => (
-            <div style={{
-                ...defaultStyle,
-                ...transitionStyles[state]
-            }}>
-                {children}
-            </div>
-        )}
+        {state => {
+            console.log(state);
+            return (
+                React.createElement(
+                    renderAs,
+                    {
+                        style: {
+                            ...style,
+                            ...defaultStyle,
+                            ...transitionStyles[state]
+                        },
+                        ...props,
+                    },
+                    children
+                )
+        )}}
     </Transition>
 );
 

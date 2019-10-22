@@ -4,12 +4,16 @@ import { Content, Section, Heading, Columns } from "react-bulma-components";
 import PortfolioCard from "../Components/Portfolio/PortfolioCard";
 import usePortfolioItems from "../hooks/usePortfolioItems";
 import { EPages } from "../utils/EPages";
+import Helmet from "react-helmet";
 
 export default () => {
     const items = usePortfolioItems();
 
     return (
         <Layout currentPage={EPages.Portfolio}>
+            <Helmet>
+                <title>My Portfolio | Francesc Pellicero</title>
+            </Helmet>
             <Content>
                 <Section>
                     <Heading>

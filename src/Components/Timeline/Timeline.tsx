@@ -1,7 +1,7 @@
 import * as React from "react";
 import clsx from "clsx";
 import { Content, Modal, Button, Section, Heading } from "react-bulma-components";
-import { render } from "ink";
+import Fade from "../Layout/Transitions/Fade";
 
 interface ITimelineProps extends React.HTMLProps<HTMLDivElement> { }
 const Timeline = ({ children, className, ...props }: ITimelineProps) => (
@@ -30,10 +30,6 @@ const TimelineItemDetails = ({ title, subtitle, children }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const renderDetail = () => {
-    if (!isOpen) {
-      return null;
-    }
-
     const media = window.matchMedia("(max-width: 768px)");
 
     if (media.matches) {
@@ -44,20 +40,23 @@ const TimelineItemDetails = ({ title, subtitle, children }) => {
           closeOnBlur={true}
           showClose={false}
         >
-          <Modal.Content style={{ background: "white" }}>
-            <Section>
-              <Content>
-                <Heading renderAs="h3">
-                  {title}
-                </Heading>
-                <Heading subtitle renderAs="h3" size={6}>
-                  {subtitle}
-                </Heading>
-                <hr />
-                {children}
-              </Content>
-            </Section>
-          </Modal.Content>
+          <Fade renderAs={Modal.Content} style={{ background: "white" }}>
+            {/* <Modal.Content style={{ background: "white" }}> */}
+              <Section>
+                <Content>
+                  <Heading renderAs="h3">
+                    {title}
+                  </Heading>
+                  <Heading subtitle renderAs="h3" size={6}>
+                    {subtitle}
+                  </Heading>
+                  <hr />
+                  {children}
+                </Content>
+              </Section>
+            {/* </Modal.Content> */}
+          </Fade>
+          
         </Modal>
       );
     }

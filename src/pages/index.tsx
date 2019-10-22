@@ -1,6 +1,5 @@
 import React from "react";
-import {Heading, Section, Container, Hero, Footer} from "react-bulma-components";
-import Skills from "../Components/AboutMe/Skills/ProgressSkills";
+import {Heading, Section, Container, Hero} from "react-bulma-components";
 import Timeline from "../Components/AboutMe/Experience/Experience";
 import Layout from "../Components/Layout/Layout";
 import Education from "../Components/AboutMe/Education/Education";
@@ -8,10 +7,14 @@ import Socials from "../Components/AboutMe/Socials/Socials";
 import TagsSkills from "../Components/AboutMe/Skills/TagsSkills";
 import Summary from "../Components/AboutMe/Summary/Summary";
 import { EPages } from "../utils/EPages";
-import Fade from "../Components/Layout/Transitions/Fade";
+import Helmet from "react-helmet";
+
 
 export default () => (
     <Layout currentPage={EPages.AboutMe}>
+            <Helmet>
+                <title>About Me | Francesc Pellicero</title>
+            </Helmet>
             <TagsSkills />
             <Container textAlignment="centered">
                 <Hero color="light">

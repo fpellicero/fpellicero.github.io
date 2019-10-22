@@ -5,10 +5,9 @@ import { IPortfolioItem } from "../../hooks/usePortfolioItems";
 const PortfolioCard = ({image, description, name, publicUrl, repositoryUrl}: IPortfolioItem) => {
     return (
         <Columns.Column
-            tablet={{size: "half"}}
             desktop={{size: "one-third"}}
         >    
-            <Card>
+            <Card className="portfolio-card">
                 <Card.Image size="4by3"  src={image.publicURL}/>
                 <Card.Content>
                     <Heading size={4} textAlignment="centered">
