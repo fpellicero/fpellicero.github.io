@@ -27,8 +27,8 @@ const Fade = ({
     ...props
 }: IFadeProps) => (
     <Transition
-        in={typeof window !== "undefined"}
-        appear={true}
+        in={true}
+        appear={typeof window !== "undefined"}
         timeout={10}
         exit={true}
     >
