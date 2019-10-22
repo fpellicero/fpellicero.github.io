@@ -26,11 +26,11 @@ const TimelineItem = ({ children, color, marker, ...props }: ITimelineItemProps)
 }
 
 const TimelineItemDetails = ({ title, subtitle, children }) => {
-
+  
   const [isOpen, setIsOpen] = React.useState(false);
 
   const renderDetail = () => {
-    if (typeof window === "undefined") {
+    if (typeof window === "undefined" || !isOpen) {
       return null;
     }
 
@@ -66,10 +66,12 @@ const TimelineItemDetails = ({ title, subtitle, children }) => {
     }
 
     return (
-      <div style={{ textAlign: "left" }}>
-        <hr />
-        {children}
-      </div>
+      <Fade
+        style={{ textAlign: "left" }}
+      >
+          <hr />
+          {children}
+      </Fade>
     );
   }
 
