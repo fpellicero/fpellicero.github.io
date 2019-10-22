@@ -30,6 +30,10 @@ const TimelineItemDetails = ({ title, subtitle, children }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const renderDetail = () => {
+    if (typeof window === "undefined") {
+      return null;
+    }
+
     const media = window.matchMedia("(max-width: 768px)");
 
     if (media.matches) {
