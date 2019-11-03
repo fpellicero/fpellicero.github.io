@@ -14,6 +14,7 @@ module.exports = {
         includePaths: ["./src"],
       },
     },
+    "@carrotsearch/gatsby-transformer-html",
     "gatsby-transformer-json",
     {
       resolve: "gatsby-source-filesystem",

@@ -14,26 +14,27 @@ const transitionStyles = {
     entering: { },
     entered: { opacity: 1, transform: "" },
     exiting: { },
-    exited: { },
+    exited: { display: "none"},
 };
 
 interface IFadeProps extends React.HTMLProps<HTMLDivElement> {
+    visible?: boolean;
     renderAs?: any;
 }
 const Fade = ({ 
     children, 
     style = {},
     renderAs = "div",
+    visible = true,
     ...props
 }: IFadeProps) => (
     <Transition
-        in={true}
+        in={visible}
         appear={typeof window !== "undefined"}
-        timeout={10}
+        timeout={250}
         exit={true}
     >
         {state => {
-            console.log(state);
             return (
                 React.createElement(
                     renderAs,

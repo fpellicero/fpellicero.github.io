@@ -30,7 +30,7 @@ const TimelineItemDetails = ({ title, subtitle, children }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const renderDetail = () => {
-    if (typeof window === "undefined" || !isOpen) {
+    if (typeof window === "undefined") {
       return null;
     }
 
@@ -67,6 +67,7 @@ const TimelineItemDetails = ({ title, subtitle, children }) => {
 
     return (
       <Fade
+        visible={isOpen}
         style={{ textAlign: "left" }}
       >
           <hr />

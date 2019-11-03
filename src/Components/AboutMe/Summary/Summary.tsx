@@ -5,7 +5,6 @@ const Summary = () => {
     return (
         <Content textAlignment="justified">
             <Heading renderAs="h2">About me</Heading>
-
             <div>
                 <p>
                     I consider myself a passionate software developer and a team player.

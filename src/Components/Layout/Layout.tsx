@@ -34,7 +34,8 @@ const Layout = ({children, currentPage}: ILayoutProps) => (
                     <Footer>
                         <Content textAlignment="centered">
                             <div>
-                                Built with <i className="fa fa-heart"></i> with GatsbyJS and Bulma.io
+                                Built with <i className="fa fa-heart"></i> with {" "}
+                                <a href="https://www.gatsbyjs.org/" target="_blank">GatsbyJS</a> and <a href="https://bulma.io" target="_blank">Bulma.io</a>
                             </div>
                             <div>
                                 You can check the source for this page on {" "}
