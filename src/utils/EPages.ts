@@ -1,4 +1,5 @@
 export enum EPages {
     AboutMe,
-    Portfolio
+    Portfolio,
+    Blog
 }

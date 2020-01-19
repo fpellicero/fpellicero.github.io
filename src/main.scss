@@ -8,7 +8,7 @@
 @import "~bulma/sass/elements/progress.sass";
 @import "~bulma/sass/elements/image.sass";
 @import "~bulma/sass/elements/content.sass";
-@import "~bulma/sass/elements/tag.sass";
+//@import "~bulma/sass/elements/tag.sass";
 @import "~bulma/sass/components/media.sass";
 @import "~bulma/sass/components/modal.sass";
 @import "~bulma/sass/components/card.sass";
@@ -93,5 +93,12 @@ $logo-height: 128px;
             padding-top: 0;
             margin-top: 0;
         }
+    }
+}
+
+.section {
+    @include mobile {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
 }

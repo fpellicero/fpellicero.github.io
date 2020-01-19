@@ -14,8 +14,6 @@ module.exports = {
         includePaths: ["./src"],
       },
     },
-    "@carrotsearch/gatsby-transformer-html",
-    "gatsby-transformer-json",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -23,6 +21,24 @@ module.exports = {
         path: `${__dirname}/src/data/`,
       }
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: "pages",
+        path: `${__dirname}/src/pages/`,
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        defaultLayouts: {
+          pages: require.resolve("./src/Components/Blog/BlogDefaultLayout.tsx")
+        },
+        gatsbyRemarkPlugins: ['gatsby-remark-prismjs']
+      }
+    },
+    "@carrotsearch/gatsby-transformer-html",
+    "gatsby-transformer-json",
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

@@ -15,7 +15,7 @@ export default () => (
             <Helmet>
                 <title>About Me | Francesc Pellicero</title>
             </Helmet>
-            <TagsSkills />
+            {/* <TagsSkills /> */}
             <Container textAlignment="centered">
                 <Hero color="light">
                     <Hero.Body>

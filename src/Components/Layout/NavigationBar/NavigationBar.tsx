@@ -26,6 +26,9 @@ const NavigationBar = ({currentPage}: INavigtionBarProps) => {
                 <li className={clsx(currentPage === EPages.Portfolio && "is-active")}>
                     <Link to="/portfolio">Portfolio</Link>
                 </li>
+                <li className={clsx(currentPage === EPages.Blog && "is-active")}>
+                    <Link to="/blog">Blog</Link>
+                </li>
             </Tabs>
         </>
     )
