@@ -31,7 +31,7 @@ const Fade = ({
     <Transition
         in={visible}
         appear={typeof window !== "undefined"}
-        timeout={250}
+        timeout={0}
         exit={true}
     >
         {state => {
