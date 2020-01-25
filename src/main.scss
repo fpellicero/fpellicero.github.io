@@ -97,8 +97,19 @@ $logo-height: 128px;
 }
 
 .section {
+
     @include mobile {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
+
+        & .gatsby-highlight {
+            margin-left: -10px;
+            margin-right: -10px;
+            
+            & > pre {
+                padding-left: 12px;    
+                padding-right: 12px;    
+            }
+        }
     }
 }
