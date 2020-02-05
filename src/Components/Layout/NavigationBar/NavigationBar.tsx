@@ -18,7 +18,12 @@ const NavigationBar = ({ currentPage }: INavigtionBarProps) => {
         page: EPages
         children: React.ReactNode
     }) => (
-        <li className={clsx("navigation-bar__tab", currentPage === page && "is-active")}>
+        <li
+            className={clsx(
+                "navigation-bar__tab",
+                currentPage === page && "is-active"
+            )}
+        >
             {children}
         </li>
     )

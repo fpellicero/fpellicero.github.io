@@ -1,28 +1,27 @@
-import * as React from "react";
-import { Transition } from 'react-transition-group';
+import * as React from "react"
+import { Transition } from "react-transition-group"
 
-const duration = 300;
+const duration = 300
 
 const defaultStyle = {
     transition: `all ${duration}ms ease-in-out`,
     transform: "translate3d(0, 25px, 0)",
     opacity: 0,
-    
 }
 
 const transitionStyles = {
-    entering: { },
+    entering: {},
     entered: { opacity: 1, transform: "" },
-    exiting: { },
-    exited: { display: "none"},
-};
+    exiting: {},
+    exited: { display: "none" },
+}
 
 interface IFadeProps extends React.HTMLProps<HTMLDivElement> {
-    visible?: boolean;
-    renderAs?: any;
+    visible?: boolean
+    renderAs?: any
 }
-const Fade = ({ 
-    children, 
+const Fade = ({
+    children,
     style = {},
     renderAs = "div",
     visible = true,
@@ -35,21 +34,20 @@ const Fade = ({
         exit={true}
     >
         {state => {
-            return (
-                React.createElement(
-                    renderAs,
-                    {
-                        style: {
-                            ...style,
-                            ...defaultStyle,
-                            ...transitionStyles[state]
-                        },
-                        ...props,
+            return React.createElement(
+                renderAs,
+                {
+                    style: {
+                        ...style,
+                        ...defaultStyle,
+                        ...transitionStyles[state],
                     },
-                    children
-                )
-        )}}
+                    ...props,
+                },
+                children
+            )
+        }}
     </Transition>
-);
+)
 
-export default Fade;
+export default Fade

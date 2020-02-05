@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby"
 
 interface IBlogPostsQueryResult {
     allMdx: {
@@ -9,13 +9,13 @@ interface IBlogPostsQueryResult {
 }
 
 export interface IBlogPost {
-    id: string;
-    timeToRead: string;
+    id: string
+    timeToRead: string
     frontmatter: {
-        title: string;
-        slug: string;
-        date: string;
-        summary: string;
+        title: string
+        slug: string
+        date: string
+        summary: string
     }
 }
 
@@ -23,8 +23,13 @@ const useBlogPosts = (): IBlogPost[] => {
     const items = useStaticQuery<IBlogPostsQueryResult>(graphql`
         query BlogPosts {
             allMdx(
-                filter: {frontmatter: {slug: {glob: "/blog/*"}, status: {eq: "published"}}},
-                sort: {order: DESC, fields: frontmatter___date}
+                filter: {
+                    frontmatter: {
+                        slug: { glob: "/blog/*" }
+                        status: { eq: "published" }
+                    }
+                }
+                sort: { order: DESC, fields: frontmatter___date }
             ) {
                 edges {
                     node {
@@ -40,9 +45,9 @@ const useBlogPosts = (): IBlogPost[] => {
                 }
             }
         }
-    `);
+    `)
 
-    return items.allMdx.edges.map(edge => edge.node);
+    return items.allMdx.edges.map(edge => edge.node)
 }
 
-export default useBlogPosts;
+export default useBlogPosts

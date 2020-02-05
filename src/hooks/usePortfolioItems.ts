@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby"
 
 interface IPortfolioItemsQueryResult {
     allPortfolioJson: {
@@ -9,13 +9,13 @@ interface IPortfolioItemsQueryResult {
 }
 
 export interface IPortfolioItem {
-    id: string;
-    name: string;
-    publicUrl: string;
-    repositoryUrl: string;
-    description: string[];
+    id: string
+    name: string
+    publicUrl: string
+    repositoryUrl: string
+    description: string[]
     image: {
-        publicURL: string;
+        publicURL: string
     }
 }
 
@@ -37,9 +37,9 @@ const usePortfolioItems = (): IPortfolioItem[] => {
                 }
             }
         }
-    `);
+    `)
 
-    return items.allPortfolioJson.edges.map(edge => edge.node);
+    return items.allPortfolioJson.edges.map(edge => edge.node)
 }
 
-export default usePortfolioItems;
+export default usePortfolioItems

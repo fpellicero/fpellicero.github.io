@@ -5,18 +5,18 @@ interface IWorkExperienceQueryResult {
     allExperienceJson: {
         edges: Array<{
             node: {
-                startDate: string;
-                title: string;
-                subtitle: string;
+                startDate: string
+                title: string
+                subtitle: string
                 marker: {
-                    color: string;
+                    color: string
                     image: null | {
-                        publicURL: string;
+                        publicURL: string
                     }
                 }
                 details: {
                     childHtml: {
-                        rawHtml: string;
+                        rawHtml: string
                     }
                 }
             }
@@ -25,48 +25,48 @@ interface IWorkExperienceQueryResult {
 }
 
 export interface IWorkExperience {
-    startDate: string;
-    title: string;
-    subtitle: string;
+    startDate: string
+    title: string
+    subtitle: string
     marker: {
-        color: string;
+        color: string
         image: null | {
-            publicURL: string;
+            publicURL: string
         }
     }
-    details: string;
+    details: string
 }
 
 const useWorkExperienceItems = (): IWorkExperience[] => {
-  const data = useStaticQuery<IWorkExperienceQueryResult>(graphql`
-    {
-      allExperienceJson {
-        edges {
-          node {
-            startDate
-            title
-            subtitle
-            marker {
-              color
-              image {
-                publicURL
-              }
+    const data = useStaticQuery<IWorkExperienceQueryResult>(graphql`
+        {
+            allExperienceJson {
+                edges {
+                    node {
+                        startDate
+                        title
+                        subtitle
+                        marker {
+                            color
+                            image {
+                                publicURL
+                            }
+                        }
+                        details {
+                            childHtml {
+                                rawHtml
+                            }
+                        }
+                    }
+                }
             }
-            details {
-              childHtml {
-                rawHtml
-              }
-            }
-          }
         }
-      }
-    }
-  `);
+    `)
 
-  return data.allExperienceJson.edges.map(({node}) => ({
+    return data.allExperienceJson.edges.map(({ node }) => ({
         ...node,
         details: node.details.childHtml.rawHtml,
-  }))
+    }))
 }
 
-export default useWorkExperienceItems;
+export default useWorkExperienceItems
