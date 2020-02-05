@@ -1,7 +1,7 @@
 [
     {
         "startDate": "October 2018",
-        "title": "Lead Frontend Developer",
+        "title": "Lead Frontend Engineer",
         "subtitle": "Tiendeo Web Marketing S.L",
         "details": "./Tiendeo/lead.html",
         "marker": {
@@ -26,6 +26,15 @@
         "details": "./atrapalo.html",
         "marker": {
             "color": "warning"
+        }
+    },
+    {
+        "startDate": "September 2017 - December 2018",
+        "title": "Frontend Teacher",
+        "subtitle": "ESDi School of Design",
+        "details": "./esdi.html",
+        "marker": {
+            "color": "success"
         }
     },
     {

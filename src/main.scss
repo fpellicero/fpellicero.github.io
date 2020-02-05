@@ -24,18 +24,36 @@
 
 .main-container {
     min-height: 100vh;
+
+    @media (max-width: $tablet) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    &__column {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     &__box {
         padding: 0;
-        @media (max-width: $tablet) {
-            padding-left: 0;
-            padding-right: 0;
-        }
+    }
+
+    &__content {
+        margin-top: 1rem;
     }
 }
 
 $logo-height: 128px;
 .navigation-bar {
-    display: flex;
+
+    &__logo-wrapper {
+        display: flex;
+    }
+
+    &__tab {
+        flex-basis: 30%;
+    }
 
     &__logo {
         margin: auto;
@@ -67,7 +85,29 @@ $logo-height: 128px;
     }
 }
 
+.portfolio-items {
+    display: grid;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+    grid-template-columns: 1fr;
+
+    @media (min-width: calc(#{$tablet} - 1px)) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 .portfolio-card {
+
+    &__description {
+        height: 3.9rem;
+        line-height: 1.3rem;
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
     .card-image {
         & > .image {
             margin: 0;

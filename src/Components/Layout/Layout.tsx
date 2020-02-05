@@ -2,7 +2,6 @@ import React from "react";
 import { Box, Columns, Footer, Content } from "react-bulma-components";
 import Helmet from "react-helmet";
 import "../../main.scss";
-import "./layout.scss";
 import "font-awesome/css/font-awesome.min.css";
 import NavigationBar from "./NavigationBar/NavigationBar";
 import { EPages } from "../../utils/EPages";
@@ -20,6 +19,7 @@ const Layout = ({children, currentPage}: ILayoutProps) => (
         </Helmet>
         <Columns className="main-container" centered={true}>
             <Columns.Column
+                className="main-container__column"
                 tablet={{size: 10}} 
                 widescreen={{size: 8}}
             >

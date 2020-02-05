@@ -7,20 +7,20 @@ const Summary = () => {
             <Heading renderAs="h2">About me</Heading>
             <div>
                 <p>
-                    I consider myself a passionate software developer and a team player.
-                    I value the team the most, always trying to add the most value to the
-                    team and getting the most out of it.
+                    Passionate software developer, Javascript lover and team player.
+                    I'm always looking for technical challenges, and I value a team with
+                    strong bonds over anything else.
                 </p>
 
                 <p>
-                    Always trying to improve and expand my skills, learn new technologies 
-                    and apply best practices to deliver the best quality software possible.
+                    Big advocate of Keeping Things Simple, but I love to over-engineer things
+                    in my free time to push my boundaries. Trying to deliver the best quality
+                    software possible. Never satisfied with the status-quo, I question things
+                    and try to improve them constantly.
                 </p>
 
                 <p>
-                    Front End developer by heart, a big fan of React.js and a strong Javascript
-                    advocate (I do actually think that is one of the most powerful tools ever 
-                    built, if used properly).
+                    Mountain biker. Salsa dancer. Book reader. Videogame player. One day I'll learn to play guitar (🤞).
                 </p>
             </div>
         </Content>
