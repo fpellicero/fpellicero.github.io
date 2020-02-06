@@ -14,7 +14,7 @@
         "repositoryUrl": "https://github.com/fpellicero/flappy_dragon",
         "publicUrl": "https://flappy-dragon.herokuapp.com",
         "description": [
-            "The popular Flappy Bird game, just with different sprites. Built with <a href='https://phaser.io/' target='_blank'>Phaser</a> and Typescript"
+            "The popular Flappy Bird game, just with different sprites. Built with <a href='https://phaser.io/' target='_blank'>Phaser</a> and Javascript"
         ]
     },
     {

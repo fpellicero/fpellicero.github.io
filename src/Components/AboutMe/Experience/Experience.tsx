@@ -12,7 +12,7 @@ const Experience = () => {
             <Timeline className="is-centered">
                 <Timeline.Header color="primary">Present</Timeline.Header>
                 {items.map(item => (
-                    <ExperienceItem {...item} />
+                    <ExperienceItem key={item.title} {...item} />
                 ))}
                 <Timeline.Header color="primary">Start</Timeline.Header>
             </Timeline>

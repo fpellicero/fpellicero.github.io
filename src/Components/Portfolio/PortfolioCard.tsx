@@ -16,8 +16,9 @@ const PortfolioCard = ({
                 <Heading size={4} textAlignment="centered">
                     {name}
                 </Heading>
-                {description.map(p => (
+                {description.map((p, i) => (
                     <p
+                        key={i}
                         className="portfolio-card__description"
                         dangerouslySetInnerHTML={{ __html: p }}
                     />

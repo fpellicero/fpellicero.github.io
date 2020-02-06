@@ -94,6 +94,10 @@ $logo-height: 128px;
     @media (min-width: calc(#{$tablet} - 1px)) {
         grid-template-columns: 1fr 1fr;
     }
+
+    @media (min-width: $desktop) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
 .portfolio-card {
