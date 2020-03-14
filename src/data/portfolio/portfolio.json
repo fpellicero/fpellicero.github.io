@@ -1,5 +1,14 @@
 [
     {
+        "name": "Pixel Piano",
+        "image": "./pixel-piano.png",
+        "repositoryUrl": "https://github.com/fpellicero/pixel-piano",
+        "publicUrl": "https://fpellicero.github.io/pixel-piano",
+        "description": [
+            "A piano, implemented with Phaser 3 and Tonejs. Done mainly to practice some pixel art."
+        ]
+    },
+    {
         "name": "Arkapong",
         "image": "./arkapong.png",
         "repositoryUrl": "https://github.com/fpellicero/arkapong",
