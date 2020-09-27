@@ -8,7 +8,7 @@ function useTheme(): [Theme, (t: Theme) => void] {
     const setThemeCallback = React.useCallback((t: Theme) => {
         setTheme(t);
         try {
-            localStorage.setItem("theme", theme)
+            localStorage.setItem("theme", t)
         } catch (e) {
             console.error(e)
         }
