@@ -10,7 +10,7 @@ import { EPages } from "../utils/EPages"
 import Helmet from "react-helmet"
 
 export default () => (
-    <Layout currentPage={EPages.AboutMe}>
+    <>
         <Helmet>
             <title>About Me | Francesc Pellicero</title>
         </Helmet>
@@ -40,5 +40,5 @@ export default () => (
         <Section>
             <Education />
         </Section>
-    </Layout>
+    </>
 )

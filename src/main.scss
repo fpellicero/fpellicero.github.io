@@ -31,7 +31,9 @@ html {
     &.--dark {
         filter: invert(1) hue-rotate(180deg);
 
-        img, .gatsby-highlight {
+        img,
+        .gatsby-highlight,
+        .modal-background {
             filter: invert(1) hue-rotate(180deg);
         }
     }

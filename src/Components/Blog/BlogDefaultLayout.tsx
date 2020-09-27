@@ -16,7 +16,7 @@ interface IProps {
 const BlogDefaultLayout = (props: IProps) => {
     const { children } = props
     return (
-        <Layout currentPage={EPages.Blog}>
+        <>
             <Helmet>
                 <title>
                     {props.pageContext.frontmatter.title} | Francesc Pellicero
@@ -30,7 +30,7 @@ const BlogDefaultLayout = (props: IProps) => {
                     </center>
                 </Section>
             </Container>
-        </Layout>
+        </>
     )
 }
 

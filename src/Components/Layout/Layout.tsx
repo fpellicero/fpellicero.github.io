@@ -12,10 +12,11 @@ import clsx from "clsx"
 
 interface ILayoutProps {
     children: React.ReactNode
-    currentPage: EPages
+    path: string;
 }
 
-const Layout = ({ children, currentPage }: ILayoutProps) => {
+const Layout = ({ children, path }: ILayoutProps) => {
+    const currentPage: EPages = getCurrentPage(path);
     const [theme, setTheme] = useTheme();
     return (
         <>
@@ -70,6 +71,25 @@ const Layout = ({ children, currentPage }: ILayoutProps) => {
             </Columns>
         </>
     );
+}
+
+function getCurrentPage(path: string): EPages {
+    if (!path) {
+        return EPages.AboutMe;
+    }
+    if (path.startsWith("/index")) {
+        return EPages.AboutMe;
+    }
+
+    if (path.startsWith("/blog")) {
+        return EPages.Blog;
+    }
+
+    if (path.startsWith("/portfolio")) {
+        return EPages.Portfolio;
+    }
+    
+    return EPages.AboutMe;
 }
 
 export default Layout

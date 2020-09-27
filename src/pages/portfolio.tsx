@@ -10,7 +10,7 @@ export default () => {
     const items = usePortfolioItems()
 
     return (
-        <Layout currentPage={EPages.Portfolio}>
+        <>
             <Helmet>
                 <title>My Portfolio | Francesc Pellicero</title>
             </Helmet>
@@ -38,6 +38,6 @@ export default () => {
                     ))}
                 </Section>
             </Content>
-        </Layout>
+        </>
     )
 }
