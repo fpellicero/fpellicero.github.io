@@ -9,19 +9,19 @@ const Socials = () => {
                     href="https://www.linkedin.com/in/fpellicero/"
                     target="_blank"
                 >
-                    <i className="fa fa-linkedin" />
+                    <i className="fab fa-linkedin" />
                 </a>
             </div>
 
             <div className="socials__item">
                 <a href="https://github.com/fpellicero" target="_blank">
-                    <i className="fa fa-github" />
+                    <i className="fab fa-github" />
                 </a>
             </div>
 
             {/* <div className="socials__item">
                 <a href="mailto:fpellicero@gmail.com" target="_blank">
-                    <i className="fa fa-envelope"/>
+                    <i className="fas fa-envelope"/>
                 </a>
             </div> */}
         </div>

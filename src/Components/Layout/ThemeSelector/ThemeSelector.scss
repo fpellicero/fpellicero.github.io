@@ -1,0 +1,37 @@
+.theme-selector {
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  top: 5px;
+  right: 5px;
+  font-size: 2em;
+  cursor: pointer;
+  z-index: 1;
+  filter: drop-shadow(0 0 5px white);
+
+  padding: 0;
+  border: none;
+
+  &__icon {
+    position: absolute;
+    left: 0;
+    &-enter {
+      opacity: 0;
+      transform: scale(0);
+    }
+    &-enter-active {
+      transition: all .25s ease-in-out;
+      opacity: 1;
+      transform: none;
+    }
+    &-exit {
+      opacity: 1;
+      transform: none;
+    }
+    &-exit-active {
+      transition: all .25s ease-in-out;
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+}

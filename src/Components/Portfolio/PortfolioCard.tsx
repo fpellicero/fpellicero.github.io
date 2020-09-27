@@ -32,7 +32,7 @@ const PortfolioCard = ({
                         className="is-flex"
                         style={{ alignItems: "center" }}
                     >
-                        <i className="fa fa-github is-size-3" />
+                        <i className="fab fa-github is-size-3" />
                         <span style={{ marginLeft: "0.5rem" }}>Source</span>
                     </a>
                 </Card.Footer.Item>
@@ -43,7 +43,7 @@ const PortfolioCard = ({
                         className="is-flex"
                         style={{ alignItems: "center" }}
                     >
-                        <i className="fa fa-globe is-size-3" />
+                        <i className="fas fa-globe is-size-3" />
                         <span style={{ marginLeft: "0.5rem" }}>Demo</span>
                     </a>
                 </Card.Footer.Item>

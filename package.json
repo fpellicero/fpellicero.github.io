@@ -44,6 +44,7 @@
     "url": "https://github.com/fpellicero/fpellicero-homepage"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@mdx-js/mdx": "^1.5.5",
     "@mdx-js/react": "^1.5.5",

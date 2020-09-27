@@ -16,10 +16,10 @@ const BlogPostItem = (post: IBlogPost) => {
                 </h3>
                 <small style={{ position: "relative", top: "-1em" }}>
                     <span>
-                        <i className="fa fa-calendar" /> {date}
+                        <i className="far fa-calendar" /> {date}
                     </span>
                     <span style={{ marginLeft: "1em" }}>
-                        <i className="fa fa-clock-o" /> {timeToRead} min read
+                        <i className="fas fa-clock" /> {timeToRead} min read
                     </span>
                 </small>
             </header>
