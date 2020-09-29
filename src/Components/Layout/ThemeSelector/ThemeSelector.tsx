@@ -1,16 +1,15 @@
 import * as React from "react";
 import { CSSTransition } from "react-transition-group";
-import { Theme } from "../../../hooks/useTheme";
 import {Button} from "react-bulma-components"
 import "./ThemeSelector.scss"
 
 interface IProps {
-  theme: Theme;
-  setTheme: (t: Theme) => void;
+  darkMode: boolean;
+  setDarkMode: (darkMode: boolean) => void;
 }
 
-function ThemeSelector({setTheme, theme}: IProps) {
-  const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
+function ThemeSelector({darkMode, setDarkMode}: IProps) {
+  const toggleTheme = () => setDarkMode(!darkMode);
   return (
     <Button
       className="theme-selector"
@@ -18,7 +17,7 @@ function ThemeSelector({setTheme, theme}: IProps) {
       data-tootip="HAHA"
     >
         <CSSTransition
-          in={theme === "light"}
+          in={!darkMode}
           timeout={250}
           classNames="theme-selector__icon"
           mountOnEnter
@@ -27,7 +26,7 @@ function ThemeSelector({setTheme, theme}: IProps) {
             <i className="theme-selector__icon far fa-sun"/>
         </CSSTransition>
         <CSSTransition
-          in={theme === "dark"}
+          in={darkMode}
           timeout={250}
           classNames="theme-selector__icon"
           mountOnEnter

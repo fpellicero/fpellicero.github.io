@@ -6,9 +6,9 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import NavigationBar from "./NavigationBar/NavigationBar"
 import { EPages } from "../../utils/EPages"
 import Fade from "./Transitions/Fade"
-import useTheme from "../../hooks/useTheme"
+import useDarkMode from "dark-mode-react-hook";
 import ThemeSelector from "./ThemeSelector/ThemeSelector"
-import clsx from "clsx"
+
 
 interface ILayoutProps {
     children: React.ReactNode
@@ -17,7 +17,7 @@ interface ILayoutProps {
 
 const Layout = ({ children, path }: ILayoutProps) => {
     const currentPage: EPages = getCurrentPage(path);
-    const [theme, setTheme] = useTheme();
+    const [darkMode, setDarkMode] = useDarkMode();
     return (
         <>
             <Helmet >
@@ -25,7 +25,6 @@ const Layout = ({ children, path }: ILayoutProps) => {
                     name="viewport"
                     content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no"
                 />
-                <html className={clsx(theme === "dark" && "--dark")}/>
             </Helmet>
             <Columns className="main-container" centered={true}>
                 <Columns.Column
@@ -34,7 +33,7 @@ const Layout = ({ children, path }: ILayoutProps) => {
                     widescreen={{ size: 8 }}
                 >
                     <Box className="main-container__box">
-                        <ThemeSelector theme={theme} setTheme={setTheme} />
+                        <ThemeSelector darkMode={darkMode} setDarkMode={setDarkMode} />
                         <NavigationBar currentPage={currentPage} />
                         <Fade
                             key={currentPage}

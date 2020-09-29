@@ -20,23 +20,17 @@
 
 @import "~bulma-timeline/src/sass/index.sass";
 
-// @import "~bulma/sass/"
+body {
+    transition: filter .25s ease-in-out;
 
-html {
-    transition: filter 0.25s ease-in-out;
     img {
-        transition: filter 0.25s ease-in-out;
+        transition: filter .25s ease-in-out;
     }
+}
 
-    &.--dark {
-        filter: invert(1) hue-rotate(180deg);
-
-        img,
-        .gatsby-highlight,
-        .modal-background {
-            filter: invert(1) hue-rotate(180deg);
-        }
-    }
+.gatsby-highlight,
+.modal-background {
+    filter: invert(1) hue-rotate(180deg);
 }
 
 .main-container {
