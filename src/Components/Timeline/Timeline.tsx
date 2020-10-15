@@ -8,6 +8,7 @@ import {
     Heading,
 } from "react-bulma-components"
 import Fade from "../Layout/Transitions/Fade"
+import Collapse from "../Transitions/Collapse/Collapse"
 
 interface ITimelineProps extends React.HTMLProps<HTMLDivElement> {}
 const Timeline = ({ children, className, ...props }: ITimelineProps) => (
@@ -74,10 +75,10 @@ const TimelineItemDetails = ({ title, subtitle, children }) => {
         }
 
         return (
-            <Fade visible={isOpen} style={{ textAlign: "left" }}>
+            <Collapse visible={isOpen} timeout={300}>
                 <hr />
                 {children}
-            </Fade>
+            </Collapse>
         )
     }
 

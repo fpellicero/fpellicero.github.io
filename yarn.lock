@@ -4742,9 +4742,9 @@ damerau-levenshtein@^1.0.6:
   integrity sha512-JVrozIeElnj3QzfUIt8tB8YMluBJom4Vw9qTPpjGYQ9fYlB3D/rb6OordUxf3xeFB35LKWs0xqcO5U6ySvBtug==
 
 dark-mode-react-hook@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/dark-mode-react-hook/-/dark-mode-react-hook-1.0.0.tgz#dc39759573f5b2429b92426801414270bb7183a8"
-  integrity sha512-7QBfESpvczxSqn7PqG+yaS6tvv3s5yVNoNU6UHYIv7cQaatm6eafdsEkHR6amjgF5MGkjkvzJq9FDA1kBseMMw==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/dark-mode-react-hook/-/dark-mode-react-hook-1.1.0.tgz#b1e9d0c4aadf958debb59816ae022f24f5500c17"
+  integrity sha512-kctFIlyRHJzCqRE7hPPRR5qtrXbzbch5yQMBc/TaDsqeN+zI1v/JNJUEFErCOqBXr0yQSBUdK00s8ynYgOWqpQ==
 
 dashdash@^1.12.0:
   version "1.14.1"

@@ -25,7 +25,7 @@ const ExperienceItem = ({
             <div className="is-size-6">{title}</div>
             <div className="is-size-7">{subtitle}</div>
             <Timeline.Item.Details title={title} subtitle={subtitle}>
-                <div dangerouslySetInnerHTML={{ __html: details }} />
+                <div dangerouslySetInnerHTML={{ __html: details }} style={{textAlign: "left"}} />
             </Timeline.Item.Details>
         </Timeline.Item>
     )

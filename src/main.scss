@@ -20,17 +20,8 @@
 
 @import "~bulma-timeline/src/sass/index.sass";
 
-body {
-    transition: filter .25s ease-in-out;
-
-    img {
-        transition: filter .25s ease-in-out;
-    }
-}
-
-.gatsby-highlight,
 .modal-background {
-    filter: invert(1) hue-rotate(180deg);
+    background: rgba(230, 230, 230, .86);
 }
 
 .main-container {

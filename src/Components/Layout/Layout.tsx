@@ -17,7 +17,7 @@ interface ILayoutProps {
 
 const Layout = ({ children, path }: ILayoutProps) => {
     const currentPage: EPages = getCurrentPage(path);
-    const [darkMode, setDarkMode] = useDarkMode();
+    const [darkMode, setDarkMode] = useDarkMode({exceptions: [".gatsby-highlight"]});
     return (
         <>
             <Helmet >
