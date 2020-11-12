@@ -14,7 +14,6 @@ enum EState {
 }
 
 function Collapse({ children, timeout = 250, visible }: IProps) {
-  const wrapper = React.useRef<HTMLDivElement>();
   const content = React.useRef<HTMLDivElement>();
   const [state, setState] = React.useState<EState>(EState.HIDDEN);
 
@@ -50,23 +49,21 @@ function Collapse({ children, timeout = 250, visible }: IProps) {
     if ([EState.HIDDEN].includes(state)) {
       styles.height = 0;
       styles.opacity = 0;
+      styles.transform = "translate3d(0, -50px, 0)";
     }
 
     if ([EState.ENTERING, EState.EXITING].includes(state)) {
       styles.height = content.current?.clientHeight;
       styles.opacity = 1;
+      styles.transform = "none";
     }
 
     return styles;
   }
 
-  function getContentStyles(): React.CSSProperties {
-    return {};
-  }
-
   return (
-    <div ref={wrapper} style={getWrapperStyles()}>
-      <div ref={content} style={getContentStyles()}>
+    <div style={getWrapperStyles()}>
+      <div ref={content}>
         {children}
       </div>
     </div>
