@@ -2,7 +2,11 @@ import React from "react"
 import useBlogPosts from "../../../hooks/useBlogPosts"
 import BlogPostItem from "./BlogPostItem"
 
-const BlogPostList = () => {
+interface IProps {
+    lang: string;
+}
+
+const BlogPostList = ({ lang }: IProps) => {
     const posts = useBlogPosts()
 
     return (

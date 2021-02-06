@@ -34,7 +34,7 @@ export default () => {
 
                 <Section className="portfolio-items">
                     {items.map(item => (
-                        <PortfolioCard key={item.id} {...item} />
+                        <PortfolioCard key={item.id} lang={"en"} {...item} />
                     ))}
                 </Section>
             </Content>

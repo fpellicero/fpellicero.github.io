@@ -13,7 +13,10 @@ export interface IPortfolioItem {
     name: string
     publicUrl: string
     repositoryUrl: string
-    description: string[]
+    description: {
+        es: string[],
+        en: string[]
+    },
     image: {
         publicURL: string
     }
@@ -29,7 +32,10 @@ const usePortfolioItems = (): IPortfolioItem[] => {
                         name
                         publicUrl
                         repositoryUrl
-                        description
+                        description {
+                            es
+                            en
+                        }
                         image {
                             publicURL
                         }

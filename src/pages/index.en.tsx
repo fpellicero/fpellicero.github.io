@@ -1,11 +1,10 @@
 import React from "react"
 import { Heading, Section, Container, Hero } from "react-bulma-components"
 import Timeline from "../Components/AboutMe/Experience/Experience"
-import Layout from "../Components/Layout/Layout"
 import Education from "../Components/AboutMe/Education/Education"
 import Socials from "../Components/AboutMe/Socials/Socials"
 import TagsSkills from "../Components/AboutMe/Skills/TagsSkills"
-import Summary from "../Components/AboutMe/Summary/Summary"
+import Summary from "../Components/AboutMe/Summary/Summary.en"
 import { EPages } from "../utils/EPages"
 import Helmet from "react-helmet"
 

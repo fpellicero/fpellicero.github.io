@@ -50,7 +50,15 @@ module.exports = {
         {
             resolve: "gatsby-plugin-layout",
             options: {
-                component: require.resolve("./src/Components/Layout/Layout.tsx")
+                component: require.resolve("./src/Components/Layout/index.tsx")
+            }
+        },
+        {
+            resolve: 'gatsby-plugin-i18n',
+            options: {        
+                langKeyDefault: 'en',
+                useLangKeyLayout: true,
+                prefixDefault: false,
             }
         }
     ],

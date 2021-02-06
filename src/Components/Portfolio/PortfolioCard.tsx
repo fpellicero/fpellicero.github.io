@@ -2,13 +2,18 @@ import * as React from "react"
 import { Columns, Card, Heading } from "react-bulma-components"
 import { IPortfolioItem } from "../../hooks/usePortfolioItems"
 
+interface IProps extends IPortfolioItem {
+    lang: string;
+}
+
 const PortfolioCard = ({
     image,
     description,
     name,
     publicUrl,
     repositoryUrl,
-}: IPortfolioItem) => {
+    lang
+}: IProps) => {
     return (
         <Card className="portfolio-card">
             <Card.Image size="4by3" src={image.publicURL} />
@@ -16,7 +21,7 @@ const PortfolioCard = ({
                 <Heading size={4} textAlignment="centered">
                     {name}
                 </Heading>
-                {description.map((p, i) => (
+                {description[lang].map((p, i) => (
                     <p
                         key={i}
                         className="portfolio-card__description"
