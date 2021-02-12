@@ -7,8 +7,8 @@ import {
     Section,
     Heading,
 } from "react-bulma-components"
-import Fade from "Transitions/Fade/Fade"
 import Collapse from "Transitions/Collapse/Collapse"
+import { motion } from "framer-motion"
 
 interface ITimelineProps extends React.HTMLProps<HTMLDivElement> {}
 const Timeline = ({ children, className, ...props }: ITimelineProps) => (
@@ -35,6 +35,7 @@ const TimelineItem = ({
     )
 }
 
+const ModalContent = motion.custom(Modal.Content);
 const TimelineItemDetails = ({ title, subtitle, children }) => {
     const [isOpen, setIsOpen] = React.useState(false)
 
@@ -53,11 +54,13 @@ const TimelineItemDetails = ({ title, subtitle, children }) => {
                     closeOnBlur={true}
                     showClose={false}
                 >
-                    <Fade
-                        renderAs={Modal.Content}
+                    <motion.div
+                        className="modal-content"
+                        initial={{opacity: 0, translateY: 25}}
+                        animate={{opacity: 1, translateY: 0}}
+                        exit={{opacity: 0, translateY: 25}}
                         style={{ background: "white" }}
                     >
-                        {/* <Modal.Content style={{ background: "white" }}> */}
                         <Section>
                             <Content>
                                 <Heading renderAs="h3">{title}</Heading>
@@ -69,7 +72,7 @@ const TimelineItemDetails = ({ title, subtitle, children }) => {
                             </Content>
                         </Section>
                         {/* </Modal.Content> */}
-                    </Fade>
+                    </motion.div>
                 </Modal>
             )
         }

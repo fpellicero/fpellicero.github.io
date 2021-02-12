@@ -4,6 +4,9 @@ import { Container, Heading, Hero, Section } from "react-bulma-components";
 import Summary from "components/AboutMe/Summary/Summary";
 import Education from "components/AboutMe/Education/Education";
 import Experience from "components/AboutMe/Experience/Experience";
+import { motion } from "framer-motion";
+
+const MotionContainer = motion.custom(Container);
 
 export default function Home() {
   return (
@@ -12,30 +15,32 @@ export default function Home() {
         <title>About Me | Francesc Pellicero</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Container textAlignment="centered">
-        <Hero color="light">
-          <Hero.Body>
-            <Heading>Hello!</Heading>
-            <Heading subtitle>
-              My name is Francesc Pellicero and I'm a software
-              developer.
-            </Heading>
-            {/* <Socials /> */}
-          </Hero.Body>
-        </Hero>
-      </Container>
+      <motion.div>
+        <Container textAlignment="centered" >
+          <Hero color="light">
+            <Hero.Body>
+              <Heading>Hello!</Heading>
+              <Heading subtitle>
+                My name is Francesc Pellicero and I'm a software
+                developer.
+              </Heading>
+              {/* <Socials /> */}
+            </Hero.Body>
+          </Hero>
+        </Container>
 
-      <Section>
-        <Summary />
-      </Section>
+        <Section>
+          <Summary />
+        </Section>
 
-      <Section>
-        <Experience />
-      </Section>
+        <Section>
+          <Experience />
+        </Section>
 
-      <Section>
-        <Education />
-      </Section>
+        <Section>
+          <Education />
+        </Section>
+      </motion.div>
     </>
   )
 }

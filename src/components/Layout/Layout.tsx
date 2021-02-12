@@ -6,9 +6,9 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import NavigationBar from "./NavigationBar/NavigationBar"
 import { EPages } from "utils/EPages"
-import Fade from "Transitions/Fade/Fade"
 import useDarkMode from "dark-mode-react-hook";
 import { useRouter } from "next/router";
+import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 // import ThemeSelector from "./ThemeSelector/ThemeSelector"
 
 
@@ -30,18 +30,25 @@ const Layout: React.FC<ILayoutProps> = ({ children }: ILayoutProps) => {
             <Columns className="main-container" centered={true}>
                 <Columns.Column
                     className="main-container__column"
+                    // @ts-ignore
                     tablet={{ size: 10 }}
                     widescreen={{ size: 8 }}
                 >
                     <Box className="main-container__box">
                         {/* <ThemeSelector darkMode={darkMode} setDarkMode={setDarkMode} /> */}
                         <NavigationBar />
-                        <Fade
-                            key={pathname}
-                            className="main-container__content"
-                        >
-                            {children}
-                        </Fade>
+                        <AnimatePresence initial={false} exitBeforeEnter={true} >
+                            <motion.div 
+                                key={pathname}
+                                initial={{opacity: 0, translateY: 25}}
+                                animate={{opacity: 1, translateY: 0}}
+                                exit={{opacity: 0, translateY: 25}}
+                                transition={{ease: "easeInOut", duration: .3}}
+                                
+                            >
+                                {children}
+                            </motion.div>
+                        </AnimatePresence>
                         <Footer>
                             <Content textAlignment="centered">
                                 <div>

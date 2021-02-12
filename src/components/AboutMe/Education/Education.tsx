@@ -28,6 +28,7 @@ const EducationItem = ({
         <Columns.Column size="half">
             <Box>
                 <Media>
+                    {/* @ts-ignore */}
                     <Media.Item renderAs="figure" position="left">
                         <Image size={48} alt="64x64" src={logo} />
                     </Media.Item>

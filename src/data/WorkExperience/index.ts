@@ -11,7 +11,7 @@ export interface IWorkExperienceItem {
     title: string;
     subtitle: string;
     marker: {
-        color: "primary" | "danger" | "warning";
+        color: "primary" | "danger" | "warning" | "success";
         image?: string;
     }
     details: string;

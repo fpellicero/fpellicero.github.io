@@ -13,6 +13,7 @@ const ExperienceItem = ({
 }: IWorkExperienceItem) => {
     const getMarker = () => (
         <Timeline.Marker
+            // @ts-ignore
             color={marker.color}
             className={clsx(marker.image && "is-image is-32x32")}
         >
@@ -20,12 +21,16 @@ const ExperienceItem = ({
         </Timeline.Marker>
     )
     return (
-        <Timeline.Item color={marker.color} marker={getMarker()}>
+        <Timeline.Item
+            // @ts-ignore
+            color={marker.color}
+            marker={getMarker()}
+        >
             <p className="heading">{startDate}</p>
             <div className="is-size-6">{title}</div>
             <div className="is-size-7">{subtitle}</div>
             <Timeline.Item.Details title={title} subtitle={subtitle}>
-                <div dangerouslySetInnerHTML={{ __html: details }} style={{textAlign: "left"}} />
+                <div dangerouslySetInnerHTML={{ __html: details }} style={{ textAlign: "left" }} />
             </Timeline.Item.Details>
         </Timeline.Item>
     )
