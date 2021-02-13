@@ -9,7 +9,7 @@ import { EPages } from "utils/EPages"
 import useDarkMode from "dark-mode-react-hook";
 import { useRouter } from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
-// import ThemeSelector from "./ThemeSelector/ThemeSelector"
+import ThemeSelector from "./ThemeSelector/ThemeSelector";
 
 
 interface ILayoutProps {
@@ -18,7 +18,7 @@ interface ILayoutProps {
 
 const Layout: React.FC<ILayoutProps> = ({ children }: ILayoutProps) => {
     const { pathname } = useRouter();
-    const [] = useDarkMode();
+    const [darkMode, setDarkMode] = useDarkMode({exceptions: ["pre"]});
     return (
         <>
             <Head>
@@ -35,11 +35,12 @@ const Layout: React.FC<ILayoutProps> = ({ children }: ILayoutProps) => {
                     widescreen={{ size: 8 }}
                 >
                     <Box className="main-container__box">
-                        {/* <ThemeSelector darkMode={darkMode} setDarkMode={setDarkMode} /> */}
+                        <ThemeSelector darkMode={darkMode} setDarkMode={setDarkMode} />
                         <NavigationBar />
                         <AnimatePresence initial={false} exitBeforeEnter={true} >
                             <motion.div
                                 key={pathname}
+                                className={"main-container__content"}
                                 initial={{ opacity: 0, translateY: 25 }}
                                 animate={{ opacity: 1, translateY: 0 }}
                                 exit={{ opacity: 0, translateY: 25 }}
@@ -50,7 +51,7 @@ const Layout: React.FC<ILayoutProps> = ({ children }: ILayoutProps) => {
                                 <Footer>
                                     <Content textAlignment="centered">
                                         <div>
-                                            Built with <FontAwesomeIcon icon={faHeart} />{" "}
+                                            Built with <FontAwesomeIcon icon={faHeart} width="1rem" />{" "}
                                     with{" "}
                                             <a
                                                 href="https://www.gatsbyjs.org/"
@@ -66,7 +67,7 @@ const Layout: React.FC<ILayoutProps> = ({ children }: ILayoutProps) => {
                                         <div>
                                             You can check the source for this page on{" "}
                                             <a href="https://github.com/fpellicero/fpellicero.github.io">
-                                                <FontAwesomeIcon icon={faGithub} /> Github
+                                                <FontAwesomeIcon icon={faGithub} width="1rem" /> Github
                                     </a>
                                         </div>
                                     </Content>

@@ -1,9 +1,9 @@
 import * as React from "react";
 import { GetServerSideProps } from "next";
-import getAllPosts, { IBlogPost } from "utils/getAllPosts";
 import Head from "next/head";
 import { Container, Section, Content } from "react-bulma-components";
 import BlogPostItem from "components/Blog/BlogPostItem";
+import { IBlogPost, getAllPosts } from "services/$Posts";
 
 interface IProps {
     posts: IBlogPost[];

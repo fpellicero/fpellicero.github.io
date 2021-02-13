@@ -15,16 +15,19 @@ const NavigationBar = () => {
     }: {
         href: string
         children: React.ReactNode
-    }) => (
-        <li
-            className={clsx(
-                "navigation-bar__tab",
-                pathname === href && "is-active"
-            )}
-        >
-            {children}
-        </li>
-    )
+    }) => {
+        const isActive = pathname === href || href === "/blog" && pathname.startsWith("/blog");
+        return (
+            <li
+                className={clsx(
+                    "navigation-bar__tab",
+                    isActive && "is-active"
+                )}
+            >
+                {children}
+            </li>
+        )
+    }
 
     return (
         <>
