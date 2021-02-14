@@ -6,17 +6,19 @@ import { useRouter } from "next/router";
 import clsx from "clsx"
 import { EPages } from "utils/EPages";
 
+interface IProps {
+    currentPage: EPages;
+}
 
-const NavigationBar = () => {
-    const { pathname } = useRouter();
+const NavigationBar = ({ currentPage }: IProps) => {
     const NavigationItem = ({
-        href,
+        page,
         children,
     }: {
-        href: string
+        page: EPages
         children: React.ReactNode
     }) => {
-        const isActive = pathname === href || href === "/blog" && pathname.startsWith("/blog");
+        const isActive = page === currentPage;
         return (
             <li
                 className={clsx(
@@ -39,13 +41,13 @@ const NavigationBar = () => {
                     />
                 </div>
                 <Tabs className="is-centered is-fullwidth">
-                    <NavigationItem href={"/"}>
+                    <NavigationItem page={EPages.AboutMe}>
                         <Link href="/">About me</Link>
                     </NavigationItem>
-                    <NavigationItem href={"/portfolio"}>
+                    <NavigationItem page={EPages.Portfolio}>
                         <Link href="/portfolio">Portfolio</Link>
                     </NavigationItem>
-                    <NavigationItem href={"/blog"}>
+                    <NavigationItem page={EPages.Blog}>
                         <Link href="/blog">Blog</Link>
                     </NavigationItem>
                 </Tabs>

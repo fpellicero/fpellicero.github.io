@@ -4,10 +4,9 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import * as React from "react";
 import { Content, Section, Heading } from "react-bulma-components";
+import { EPages } from "utils/EPages";
 
-const MotionContent = motion.custom(Content);
-
-const PortfolioPage: React.FC = () => {
+const PortfolioPage = () => {
 
     return (
         <>
@@ -41,5 +40,7 @@ const PortfolioPage: React.FC = () => {
         </>
     );
 }
+
+PortfolioPage.PAGE_TYPE = EPages.Portfolio;
 
 export default PortfolioPage;

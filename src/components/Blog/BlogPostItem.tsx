@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faClock } from "@fortawesome/free-solid-svg-icons";
 import { IBlogPost } from "services/$Posts";
+import { motion } from "framer-motion";
 
 const BlogPostItem = (post: IBlogPost) => {
     const {

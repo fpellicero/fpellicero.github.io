@@ -4,12 +4,13 @@ import Head from "next/head";
 import { Container, Section, Content } from "react-bulma-components";
 import BlogPostItem from "components/Blog/BlogPostItem";
 import { IBlogPost, getAllPosts } from "services/$Posts";
+import { EPages } from "utils/EPages";
 
 interface IProps {
     posts: IBlogPost[];
 }
 
-const BlogIndex: React.FC<IProps> = ({posts}) => {
+const BlogIndex = ({posts}: IProps) => {
     return (
         <>
             <Head>
@@ -40,6 +41,8 @@ const BlogIndex: React.FC<IProps> = ({posts}) => {
         </>
     )
 }
+
+BlogIndex.PAGE_TYPE = EPages.Blog;
 
 export const getStaticProps: GetServerSideProps<IProps> = async () => {
     const posts = await getAllPosts();

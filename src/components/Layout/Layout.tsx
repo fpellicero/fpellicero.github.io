@@ -8,15 +8,16 @@ import NavigationBar from "./NavigationBar/NavigationBar"
 import { EPages } from "utils/EPages"
 import useDarkMode from "dark-mode-react-hook";
 import { useRouter } from "next/router";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import ThemeSelector from "./ThemeSelector/ThemeSelector";
 
 
 interface ILayoutProps {
-    children: React.ReactNode
+    children: React.ReactNode;
+    currentPage: EPages;
 }
 
-const Layout: React.FC<ILayoutProps> = ({ children }: ILayoutProps) => {
+const Layout: React.FC<ILayoutProps> = ({ children, currentPage }: ILayoutProps) => {
     const { pathname } = useRouter();
     const [darkMode, setDarkMode] = useDarkMode({exceptions: ["pre"]});
     return (
@@ -36,10 +37,10 @@ const Layout: React.FC<ILayoutProps> = ({ children }: ILayoutProps) => {
                 >
                     <Box className="main-container__box">
                         <ThemeSelector darkMode={darkMode} setDarkMode={setDarkMode} />
-                        <NavigationBar />
+                        <NavigationBar currentPage={currentPage} />
                         <AnimatePresence initial={false} exitBeforeEnter={true} >
                             <motion.div
-                                key={pathname}
+                                key={`layout-${pathname}`}
                                 className={"main-container__content"}
                                 initial={{ opacity: 0, translateY: 25 }}
                                 animate={{ opacity: 1, translateY: 0 }}
@@ -54,10 +55,10 @@ const Layout: React.FC<ILayoutProps> = ({ children }: ILayoutProps) => {
                                             Built with <FontAwesomeIcon icon={faHeart} width="1rem" />{" "}
                                     with{" "}
                                             <a
-                                                href="https://www.gatsbyjs.org/"
+                                                href="https://nextjs.org/"
                                                 target="_blank"
                                             >
-                                                GatsbyJS
+                                                NextJS
                                     </a>{" "}
                                     and{" "}
                                             <a href="https://bulma.io" target="_blank">

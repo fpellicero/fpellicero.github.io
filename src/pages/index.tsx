@@ -5,10 +5,9 @@ import Summary from "components/AboutMe/Summary/Summary";
 import Education from "components/AboutMe/Education/Education";
 import Experience from "components/AboutMe/Experience/Experience";
 import { motion } from "framer-motion";
+import { EPages } from "utils/EPages";
 
-const MotionContainer = motion.custom(Container);
-
-export default function Home() {
+function AboutMePage() {
   return (
     <>
       <Head>
@@ -44,3 +43,7 @@ export default function Home() {
     </>
   )
 }
+
+AboutMePage.PAGE_TYPE = EPages.AboutMe;
+
+export default AboutMePage;

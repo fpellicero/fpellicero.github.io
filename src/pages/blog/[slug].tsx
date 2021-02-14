@@ -7,6 +7,9 @@ import { MdxRemote } from "next-mdx-remote/types";
 import MDXProviderComponent from "components/Blog/MDXProvider";
 import { Content, Section } from "react-bulma-components";
 import Head from "next/head";
+import { EPages } from "utils/EPages";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface IProps {
     post: IBlogPost;
@@ -17,7 +20,7 @@ interface IParams extends ParsedUrlQuery {
     slug: string;
 }
 
-const BlogPostPage: React.FC<IProps> = ({source, post}) => {
+const BlogPostPage = ({source, post}: IProps) => {
     return (
         <>
             <Head>
@@ -27,8 +30,12 @@ const BlogPostPage: React.FC<IProps> = ({source, post}) => {
             <MDXProviderComponent>
                 <Section>
                     <Content>
+                        <h1>{post.title}</h1>
                         {hydrate(source)}
                     </Content>
+                    <div style={{textAlign: "center"}}>
+                        <Link href="/blog">Back to Index</Link>
+                    </div>
                 </Section>
             </MDXProviderComponent>
             {/* <script src="https://unpkg.com/prismjs@1.23.0/components/prism-core.min.js"></script> */}
@@ -36,6 +43,8 @@ const BlogPostPage: React.FC<IProps> = ({source, post}) => {
         </>
     );
 }
+
+BlogPostPage.PAGE_TYPE = EPages.Blog;
 
 export const getStaticProps: GetStaticProps<IProps, IParams> = async ({ params }) => {
     const post = await getPost(params.slug);

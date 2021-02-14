@@ -36,7 +36,6 @@ const PortfolioCard = ({
                         style={{ alignItems: "center" }}
                     >
                         <FontAwesomeIcon icon={faGithub} size={"2x"} />
-                        <i className="fab fa-github is-size-3" />
                         <span style={{ marginLeft: "0.5rem" }}>Source</span>
                     </a>
                 </Card.Footer.Item>

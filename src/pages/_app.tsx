@@ -5,10 +5,14 @@ import "styles/main.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
+    <Layout 
+      currentPage={Component["PAGE_TYPE"]}
+    >
       <Component {...pageProps} />
     </Layout>
   )
 }
+
+
 
 export default MyApp

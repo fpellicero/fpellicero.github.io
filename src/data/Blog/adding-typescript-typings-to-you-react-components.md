@@ -6,8 +6,6 @@ excerpt: Have you tried adding Typescript to a React project and found it painfu
 status: published
 ---
 
-# Adding typescript typings to your React components
-
 A while ago, we decided to move our codebase from Javascript to Typescript. Our main goals and expectations were:
 
 - Reducing bugs.
