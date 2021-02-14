@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "build:static": "next build && next export",
-    "predeploy": "rm -rf out && yarn build:static && cp CNAME ./out/CNAME",
+    "predeploy": "rm -rf out && yarn build:static && cp CNAME .nojekyll ./out/",
     "deploy": "gh-pages -d out"
   },
   "dependencies": {
