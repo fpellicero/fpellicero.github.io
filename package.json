@@ -1,4 +1,4 @@
-{
+  {
   "name": "fpellicero.github.io",
   "version": "0.1.0",
   "private": true,
@@ -8,7 +8,7 @@
     "start": "next start",
     "build:static": "next build && next export",
     "predeploy": "rm -rf out && yarn build:static && cp CNAME .nojekyll ./out/",
-    "deploy": "gh-pages -d out"
+    "deploy": "gh-pages --dotfiles -d out"
   },
   "dependencies": {
     "@fortawesome/free-regular-svg-icons": "^5.15.2",
