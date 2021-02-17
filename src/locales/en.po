@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2021-02-17 21:30+0100\n"
+"Mime-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+
+#: src/components/AboutMe/Summary/Summary.tsx:7
+msgid "<0><1>Passionate software developer, Javascript lover and team player. I'm always looking for technical challenges, and I value a team with strong bonds over anything else.</1><2>Big advocate of Keeping Things Simple, but I love to over-engineer things in my free time to push my boundaries. Trying to deliver the best quality software possible. Never satisfied with the status-quo, I question things and try to improve them constantly.</2><3>Mountain biker. Salsa dancer. Book reader. Videogame player. One day I'll learn to play guitar (🤞).</3></0>"
+msgstr ""
+
+#: src/components/Layout/NavigationBar/NavigationBar.tsx:22
+msgid "<0>About me</0>"
+msgstr ""
+
+#: src/components/Layout/NavigationBar/NavigationBar.tsx:32
+msgid "<0>Blog</0>"
+msgstr ""
+
+#: src/components/Layout/Layout.tsx:32
+msgid "<0>Built with <1/> with <2>NextJS</2> and <3>Bulma.io</3></0><4>You can check the source for this page on <5><6/> Github</5></4>"
+msgstr ""
+
+#: src/pages/index.tsx:20
+msgid "<0>Hello!</0><1>My name is Francesc Pellicero and I'm a software developer.</1>"
+msgstr ""
+
+#: src/pages/portfolio.tsx:21
+msgid "<0>Here you can find some of my open-sourced projects, mainly small time-waster videogames that I like to make for fun.</0><1>All of them are open sourced, so feel free to dig deep into the source of any of them if you like. Or fork it and improve it yourself!</1>"
+msgstr ""
+
+#: src/components/Layout/NavigationBar/NavigationBar.tsx:27
+msgid "<0>Portfolio</0>"
+msgstr ""
+
+#: src/components/Portfolio/PortfolioCard.tsx:31
+msgid "Demo"
+msgstr ""
+
+#: src/components/AboutMe/Education/Education.tsx:30
+msgid "Education"
+msgstr ""
+
+#: src/components/AboutMe/Experience/Experience.tsx:10
+msgid "Experience"
+msgstr ""
+
+#: src/pages/portfolio.tsx:16
+msgid "My work"
+msgstr ""
+
+#: src/components/AboutMe/Experience/Experience.tsx:16
+msgid "Present"
+msgstr ""
+
+#: src/components/Timeline/Timeline.tsx:63
+msgid "See less"
+msgstr ""
+
+#: src/components/Timeline/Timeline.tsx:66
+msgid "See more"
+msgstr ""
+
+#: src/components/Portfolio/PortfolioCard.tsx:21
+msgid "Source"
+msgstr ""
+
+#: src/components/AboutMe/Experience/Experience.tsx:22
+msgid "Start"
+msgstr ""

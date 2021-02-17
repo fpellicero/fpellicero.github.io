@@ -1,18 +1,32 @@
+import * as React from "react";
+
+import { i18n } from '@lingui/core'
+import { I18nProvider } from "@lingui/react";
 import { usePageviewTracking } from "components/Analytics/GoogleAnalytics";
 import Layout from "components/Layout/Layout";
 import { AppProps } from "next/dist/next-server/lib/router/router";
 import { NextWebVitalsMetric } from "next/dist/next-server/lib/utils";
-import * as React from "react";
 import "styles/main.scss";
+import { useRouter } from "next/router";
+
+import { messages as EN } from "locales/en";
+import { messages as ES } from "locales/es";
+
+i18n.load("es", ES);
+i18n.load("en", EN);
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const { locale } = useRouter();
+  i18n.activate(locale);
   usePageviewTracking();
   return (
-    <Layout
-      currentPage={Component["PAGE_TYPE"]}
-    >
-      <Component {...pageProps} />
-    </Layout>
+    <I18nProvider i18n={i18n} >
+      <Layout
+        currentPage={Component["PAGE_TYPE"]}
+      >
+        <Component {...pageProps} />
+      </Layout>
+    </I18nProvider>
   )
 }
 

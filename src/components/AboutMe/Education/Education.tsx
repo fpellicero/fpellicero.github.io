@@ -11,6 +11,7 @@ import {
 } from "react-bulma-components"
 import logoUpc from "./logo-upc.png"
 import logoLeeds from "./logo-leeds-metropolitan.png"
+import { Trans } from "@lingui/macro"
 
 interface IEducationItem {
     logo: string
@@ -50,7 +51,11 @@ const EducationItem = ({
 const Education = () => {
     return (
         <>
-            <Heading size={3}>Education</Heading>
+            <Heading size={3}>
+                <Trans>
+                    Education
+                </Trans>
+            </Heading>
             <Columns>
                 <EducationItem
                     logo={logoUpc}

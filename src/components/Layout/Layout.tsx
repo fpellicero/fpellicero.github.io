@@ -10,6 +10,7 @@ import useDarkMode from "dark-mode-react-hook";
 import { useRouter } from "next/router";
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import ThemeSelector from "./ThemeSelector/ThemeSelector";
+import { Trans } from "@lingui/macro";
 
 
 interface ILayoutProps {
@@ -19,7 +20,7 @@ interface ILayoutProps {
 
 const Layout: React.FC<ILayoutProps> = ({ children, currentPage }: ILayoutProps) => {
     const { pathname } = useRouter();
-    const [darkMode, setDarkMode] = useDarkMode({exceptions: ["pre"]});
+    const [darkMode, setDarkMode] = useDarkMode({ exceptions: ["pre"] });
     return (
         <>
             <Head>
@@ -51,26 +52,29 @@ const Layout: React.FC<ILayoutProps> = ({ children, currentPage }: ILayoutProps)
                                 {children}
                                 <Footer>
                                     <Content textAlignment="centered">
-                                        <div>
-                                            Built with <FontAwesomeIcon icon={faHeart} width="1rem" />{" "}
+                                        <Trans>
+
+                                            <div>
+                                                Built with <FontAwesomeIcon icon={faHeart} width="1rem" />{" "}
                                     with{" "}
-                                            <a
-                                                href="https://nextjs.org/"
-                                                target="_blank"
-                                            >
-                                                NextJS
+                                                <a
+                                                    href="https://nextjs.org/"
+                                                    target="_blank"
+                                                >
+                                                    NextJS
                                     </a>{" "}
                                     and{" "}
-                                            <a href="https://bulma.io" target="_blank">
-                                                Bulma.io
+                                                <a href="https://bulma.io" target="_blank">
+                                                    Bulma.io
                                     </a>
-                                        </div>
-                                        <div>
-                                            You can check the source for this page on{" "}
-                                            <a href="https://github.com/fpellicero/fpellicero.github.io">
-                                                <FontAwesomeIcon icon={faGithub} width="1rem" /> Github
+                                            </div>
+                                            <div>
+                                                You can check the source for this page on{" "}
+                                                <a href="https://github.com/fpellicero/fpellicero.github.io">
+                                                    <FontAwesomeIcon icon={faGithub} width="1rem" /> Github
                                     </a>
-                                        </div>
+                                            </div>
+                                        </Trans>
                                     </Content>
                                 </Footer>
                             </motion.div>

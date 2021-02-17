@@ -1,17 +1,22 @@
-  {
+{
   "name": "fpellicero.github.io",
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "yarn compile",
     "dev": "next dev",
+    "prebuild": "yarn compile",
     "build": "next build",
     "start": "next start",
     "build:static": "next build && next export",
     "predeploy": "rm -rf out && yarn build:static && cp CNAME .nojekyll ./out/",
-    "deploy": "gh-pages --dotfiles -d out"
+    "deploy": "gh-pages --dotfiles -d out",
+    "extract": "lingui extract",
+    "compile": "lingui compile"
   },
   "dependencies": {
     "@fortawesome/free-regular-svg-icons": "^5.15.2",
+    "@lingui/react": "^3.5.1",
     "@mapbox/rehype-prism": "^0.5.0",
     "@mdx-js/react": "^1.6.22",
     "@types/gtag.js": "^0.0.4",
@@ -27,14 +32,18 @@
     "timeago.js": "^4.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.16",
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-brands-svg-icons": "^5.15.2",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "@lingui/cli": "^3.5.1",
+    "@lingui/macro": "^3.5.1",
     "@types/animejs": "^3.1.2",
     "@types/mdx-js__react": "^1.5.3",
     "@types/node": "^14.14.25",
     "@types/react": "^17.0.1",
+    "babel-plugin-macros": "^3.0.1",
     "bulma-timeline": "^3.0.4",
     "clsx": "^1.1.1",
     "dark-mode-react-hook": "^1.1.0",

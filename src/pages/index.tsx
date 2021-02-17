@@ -6,6 +6,7 @@ import Education from "components/AboutMe/Education/Education";
 import Experience from "components/AboutMe/Experience/Experience";
 import { motion } from "framer-motion";
 import { EPages } from "utils/EPages";
+import { Trans } from "@lingui/macro";
 
 function AboutMePage() {
   return (
@@ -18,11 +19,13 @@ function AboutMePage() {
         <Container textAlignment="centered" >
           <Hero color="light">
             <Hero.Body>
-              <Heading>Hello!</Heading>
-              <Heading subtitle>
-                My name is Francesc Pellicero and I'm a software
-                developer.
-              </Heading>
+              <Trans>
+                <Heading>Hello!</Heading>
+                <Heading subtitle>
+                  My name is Francesc Pellicero and I'm a software
+                  developer.
+                </Heading>
+              </Trans>
               {/* <Socials /> */}
             </Hero.Body>
           </Hero>

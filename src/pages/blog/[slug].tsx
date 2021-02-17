@@ -25,7 +25,6 @@ const BlogPostPage = ({source, post}: IProps) => {
         <>
             <Head>
                 <title>{post.title} | Francesc Pellicero</title>
-                <link href="https://unpkg.com/prismjs@1.23.0/themes/prism-okaidia.css" rel="stylesheet" />
             </Head>
             <MDXProviderComponent>
                 <Section>
@@ -37,9 +36,8 @@ const BlogPostPage = ({source, post}: IProps) => {
                         <Link href="/blog">Back to Index</Link>
                     </div>
                 </Section>
+                <link href="https://unpkg.com/prismjs@1.23.0/themes/prism-okaidia.css" rel="stylesheet" />
             </MDXProviderComponent>
-            {/* <script src="https://unpkg.com/prismjs@1.23.0/components/prism-core.min.js"></script> */}
-            {/* <script src="https://unpkg.com/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script> */}
         </>
     );
 }
@@ -47,6 +45,7 @@ const BlogPostPage = ({source, post}: IProps) => {
 BlogPostPage.PAGE_TYPE = EPages.Blog;
 
 export const getStaticProps: GetStaticProps<IProps, IParams> = async ({ params }) => {
+    console.log(params);
     const post = await getPost(params.slug);
     const content = await getPostAsHtml(params.slug);
 

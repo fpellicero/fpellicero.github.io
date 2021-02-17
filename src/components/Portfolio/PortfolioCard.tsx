@@ -1,6 +1,7 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faGlobe } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Trans } from "@lingui/macro"
 import { IPortfolioItem } from "data/Portfolio/portfolio"
 import * as React from "react"
 import { Columns, Card, Heading } from "react-bulma-components"
@@ -36,7 +37,11 @@ const PortfolioCard = ({
                         style={{ alignItems: "center" }}
                     >
                         <FontAwesomeIcon icon={faGithub} size={"2x"} />
-                        <span style={{ marginLeft: "0.5rem" }}>Source</span>
+                        <span style={{ marginLeft: "0.5rem" }}>
+                            <Trans>
+                                Source
+                            </Trans>
+                        </span>
                     </a>
                 </Card.Footer.Item>
                 <Card.Footer.Item>
@@ -47,7 +52,11 @@ const PortfolioCard = ({
                         style={{ alignItems: "center" }}
                     >
                         <FontAwesomeIcon icon={faGlobe} size={"2x"} />
-                        <span style={{ marginLeft: "0.5rem" }}>Demo</span>
+                        <span style={{ marginLeft: "0.5rem" }}>
+                            <Trans>
+                                Demo
+                            </Trans>
+                        </span>
                     </a>
                 </Card.Footer.Item>
             </Card.Footer>
