@@ -5,6 +5,7 @@ import { Container, Section, Content } from "react-bulma-components";
 import BlogPostItem from "components/Blog/BlogPostItem";
 import { IBlogPost, getAllPosts } from "services/$Posts";
 import { EPages } from "utils/EPages";
+import { Trans } from "@lingui/macro";
 
 interface IProps {
     posts: IBlogPost[];
@@ -20,13 +21,15 @@ const BlogIndex = ({posts}: IProps) => {
             <Container>
                 <Section>
                     <Content>
-                        <p>Welcome to my personal blog!</p>
-                        <p>
-                            Here I write about stuff that I care about, mostly
-                            about frontend technologies. I also like to write
-                            tutorials, so good chance you'll find a few ones if
-                            you keep scrolling.
-                        </p>
+                        <Trans>
+                            <p>Welcome to my personal blog!</p>
+                            <p>
+                                Here I write about stuff that I care about, mostly
+                                about frontend technologies. I also like to write
+                                tutorials, so good chance you'll find a few ones if
+                                you keep scrolling.
+                            </p>
+                        </Trans>
 
                         <hr />
 
@@ -44,8 +47,8 @@ const BlogIndex = ({posts}: IProps) => {
 
 BlogIndex.PAGE_TYPE = EPages.Blog;
 
-export const getStaticProps: GetServerSideProps<IProps> = async () => {
-    const posts = await getAllPosts();
+export const getStaticProps: GetServerSideProps<IProps> = async ({locale}) => {
+    const posts = await getAllPosts([locale]);
 
     return {
         props: {

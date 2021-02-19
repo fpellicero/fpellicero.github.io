@@ -10,6 +10,7 @@ import Head from "next/head";
 import { EPages } from "utils/EPages";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Trans } from "@lingui/macro";
 
 interface IProps {
     post: IBlogPost;
@@ -33,7 +34,11 @@ const BlogPostPage = ({source, post}: IProps) => {
                         {hydrate(source)}
                     </Content>
                     <div style={{textAlign: "center"}}>
-                        <Link href="/blog">Back to Index</Link>
+                        <Link href="/blog">
+                            <Trans>
+                                Back to Index
+                            </Trans>
+                        </Link>
                     </div>
                 </Section>
                 <link href="https://unpkg.com/prismjs@1.23.0/themes/prism-okaidia.css" rel="stylesheet" />
@@ -44,10 +49,9 @@ const BlogPostPage = ({source, post}: IProps) => {
 
 BlogPostPage.PAGE_TYPE = EPages.Blog;
 
-export const getStaticProps: GetStaticProps<IProps, IParams> = async ({ params }) => {
-    console.log(params);
-    const post = await getPost(params.slug);
-    const content = await getPostAsHtml(params.slug);
+export const getStaticProps: GetStaticProps<IProps, IParams> = async ({ params, locale }) => {
+    const post = await getPost(params.slug, locale);
+    const content = await getPostAsHtml(params.slug, locale);
 
     return {
         props: {
@@ -57,11 +61,12 @@ export const getStaticProps: GetStaticProps<IProps, IParams> = async ({ params }
     }
 }
 
-export const getStaticPaths: GetStaticPaths<IParams> = async () => {
-    const posts = await getAllPosts();
+export const getStaticPaths: GetStaticPaths<IParams> = async ({ locales }) => {
+    const posts = await getAllPosts(locales);
 
     return {
-        paths: posts.map(({slug}) => ({
+        paths: posts.map(({slug, locale}) => ({
+            locale,
             params: {
                 slug,
             },

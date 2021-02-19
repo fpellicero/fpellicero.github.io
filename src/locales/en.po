@@ -6,6 +6,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
 
 #: src/components/AboutMe/Summary/Summary.tsx:7
 msgid "<0><1>Passionate software developer, Javascript lover and team player. I'm always looking for technical challenges, and I value a team with strong bonds over anything else.</1><2>Big advocate of Keeping Things Simple, but I love to over-engineer things in my free time to push my boundaries. Trying to deliver the best quality software possible. Never satisfied with the status-quo, I question things and try to improve them constantly.</2><3>Mountain biker. Salsa dancer. Book reader. Videogame player. One day I'll learn to play guitar (🤞).</3></0>"
@@ -33,6 +39,14 @@ msgstr ""
 
 #: src/components/Layout/NavigationBar/NavigationBar.tsx:27
 msgid "<0>Portfolio</0>"
+msgstr ""
+
+#: src/pages/blog/index.tsx:26
+msgid "<0>Welcome to my personal blog!</0><1>Here I write about stuff that I care about, mostly about frontend technologies. I also like to write tutorials, so good chance you'll find a few ones if you keep scrolling.</1>"
+msgstr ""
+
+#: src/pages/blog/[slug].tsx:32
+msgid "Back to Index"
 msgstr ""
 
 #: src/components/Portfolio/PortfolioCard.tsx:31

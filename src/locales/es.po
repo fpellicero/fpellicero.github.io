@@ -42,11 +42,13 @@ msgstr "<0>En esta página puedes encontrar algunos de mis proyectos de código 
 msgid "<0>Portfolio</0>"
 msgstr "<0>Mis proyectos</0>"
 
-#~ msgid "About me"
-#~ msgstr "Sobre mi"
+#: src/pages/blog/index.tsx:26
+msgid "<0>Welcome to my personal blog!</0><1>Here I write about stuff that I care about, mostly about frontend technologies. I also like to write tutorials, so good chance you'll find a few ones if you keep scrolling.</1>"
+msgstr "<0>¡Bienvenido a mi blog personal!</0><1>Aquí escribo sobre cosas que me interesan, mayoritariamente sobre software y tecnologías frontend. Me gusta escribir tutoriales, así que te animo a seguir mirando a ver si hay alguno que te interese.</1>"
 
-#~ msgid "Blog"
-#~ msgstr "Blog"
+#: src/pages/blog/[slug].tsx:32
+msgid "Back to Index"
+msgstr "Volver al índice"
 
 #: src/components/Portfolio/PortfolioCard.tsx:31
 msgid "Demo"
@@ -63,9 +65,6 @@ msgstr "Experiencia"
 #: src/pages/portfolio.tsx:16
 msgid "My work"
 msgstr "Mis proyectos"
-
-#~ msgid "Portfolio"
-#~ msgstr "Mis Proyectos"
 
 #: src/components/AboutMe/Experience/Experience.tsx:16
 msgid "Present"
@@ -86,3 +85,12 @@ msgstr "Código"
 #: src/components/AboutMe/Experience/Experience.tsx:22
 msgid "Start"
 msgstr "Inicio"
+
+#~ msgid "About me"
+#~ msgstr "Sobre mi"
+
+#~ msgid "Blog"
+#~ msgstr "Blog"
+
+#~ msgid "Portfolio"
+#~ msgstr "Mis Proyectos"
