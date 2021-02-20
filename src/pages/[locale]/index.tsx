@@ -7,6 +7,8 @@ import Experience from "components/AboutMe/Experience/Experience";
 import { motion } from "framer-motion";
 import { EPages } from "utils/EPages";
 import { Trans } from "@lingui/macro";
+import { GetStaticPaths, GetStaticProps } from "next";
+import Locales from "i18n/Locales";
 
 function AboutMePage() {
   return (
@@ -48,5 +50,20 @@ function AboutMePage() {
 }
 
 AboutMePage.PAGE_TYPE = EPages.AboutMe;
+
+export const getStaticProps: GetStaticProps = async ({params}) => {
+  return {
+    props: {
+      locale: params.locale,
+    }
+  }
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: Locales.map((locale) => ({params: { locale }})),
+    fallback: false,
+  }
+}
 
 export default AboutMePage;

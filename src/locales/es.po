@@ -30,11 +30,11 @@ msgstr "<0>Blog</0>"
 msgid "<0>Built with <1/> with <2>NextJS</2> and <3>Bulma.io</3></0><4>You can check the source for this page on <5><6/> Github</5></4>"
 msgstr "<0>Web hecha <1/> con <2>NextJS</2> y <3>Bulma.io</3></0><4>El código está publicado en <5><6/> Github</5></4>"
 
-#: src/pages/index.tsx:20
+#: src/pages/[locale]/index.tsx:30
 msgid "<0>Hello!</0><1>My name is Francesc Pellicero and I'm a software developer.</1>"
 msgstr "<0>¡Hola!</0><1>Me llamo Francesc Pellicero y soy desarrollador de software.</1>"
 
-#: src/pages/portfolio.tsx:21
+#: src/pages/[locale]/portfolio.tsx:31
 msgid "<0>Here you can find some of my open-sourced projects, mainly small time-waster videogames that I like to make for fun.</0><1>All of them are open sourced, so feel free to dig deep into the source of any of them if you like. Or fork it and improve it yourself!</1>"
 msgstr "<0>En esta página puedes encontrar algunos de mis proyectos de código abierto. La mayoría son pequeños videojuegos que me gusta hacer para pasar el rato.</0><1>Todos son open-source, así que os invito a adentraros en el código de cualquiera de ellos. ¡O haced un fork, y mejoradlo!</1>"
 
@@ -42,11 +42,11 @@ msgstr "<0>En esta página puedes encontrar algunos de mis proyectos de código 
 msgid "<0>Portfolio</0>"
 msgstr "<0>Mis proyectos</0>"
 
-#: src/pages/blog/index.tsx:26
+#: src/pages/[locale]/blog/index.tsx:27
 msgid "<0>Welcome to my personal blog!</0><1>Here I write about stuff that I care about, mostly about frontend technologies. I also like to write tutorials, so good chance you'll find a few ones if you keep scrolling.</1>"
 msgstr "<0>¡Bienvenido a mi blog personal!</0><1>Aquí escribo sobre cosas que me interesan, mayoritariamente sobre software y tecnologías frontend. Me gusta escribir tutoriales, así que te animo a seguir mirando a ver si hay alguno que te interese.</1>"
 
-#: src/pages/blog/[slug].tsx:32
+#: src/pages/[locale]/blog/[slug].tsx:33
 msgid "Back to Index"
 msgstr "Volver al índice"
 
@@ -62,7 +62,11 @@ msgstr "Educación"
 msgid "Experience"
 msgstr "Experiencia"
 
-#: src/pages/portfolio.tsx:16
+#: src/pages/404.tsx:33
+msgid "Looks like this page does not exist yet."
+msgstr "Parece que esta página no existe todavía."
+
+#: src/pages/[locale]/portfolio.tsx:26
 msgid "My work"
 msgstr "Mis proyectos"
 

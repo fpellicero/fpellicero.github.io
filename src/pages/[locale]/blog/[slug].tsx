@@ -11,6 +11,8 @@ import { EPages } from "utils/EPages";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Trans } from "@lingui/macro";
+import Locales from "i18n/Locales";
+import LocalizedLink from "i18n/LocalizedLink";
 
 interface IProps {
     post: IBlogPost;
@@ -18,6 +20,7 @@ interface IProps {
 }
 
 interface IParams extends ParsedUrlQuery {
+    locale: string;
     slug: string;
 }
 
@@ -34,11 +37,11 @@ const BlogPostPage = ({source, post}: IProps) => {
                         {hydrate(source)}
                     </Content>
                     <div style={{textAlign: "center"}}>
-                        <Link href="/blog">
+                        <LocalizedLink href="/blog">
                             <Trans>
                                 Back to Index
                             </Trans>
-                        </Link>
+                        </LocalizedLink>
                     </div>
                 </Section>
                 <link href="https://unpkg.com/prismjs@1.23.0/themes/prism-okaidia.css" rel="stylesheet" />
@@ -49,9 +52,9 @@ const BlogPostPage = ({source, post}: IProps) => {
 
 BlogPostPage.PAGE_TYPE = EPages.Blog;
 
-export const getStaticProps: GetStaticProps<IProps, IParams> = async ({ params, locale }) => {
-    const post = await getPost(params.slug, locale);
-    const content = await getPostAsHtml(params.slug, locale);
+export const getStaticProps: GetStaticProps<IProps, IParams> = async ({ params }) => {
+    const post = await getPost(params.slug, params.locale);
+    const content = await getPostAsHtml(params.slug, params.locale);
 
     return {
         props: {
@@ -61,14 +64,14 @@ export const getStaticProps: GetStaticProps<IProps, IParams> = async ({ params, 
     }
 }
 
-export const getStaticPaths: GetStaticPaths<IParams> = async ({ locales }) => {
-    const posts = await getAllPosts(locales);
+export const getStaticPaths: GetStaticPaths<IParams> = async () => {
+    const posts = await getAllPosts(Locales);
 
     return {
         paths: posts.map(({slug, locale}) => ({
-            locale,
             params: {
                 slug,
+                locale,
             },
         })),
         fallback: false,

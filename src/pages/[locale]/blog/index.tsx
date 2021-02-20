@@ -1,21 +1,27 @@
 import * as React from "react";
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, GetStaticPaths } from "next";
 import Head from "next/head";
 import { Container, Section, Content } from "react-bulma-components";
 import BlogPostItem from "components/Blog/BlogPostItem";
 import { IBlogPost, getAllPosts } from "services/$Posts";
 import { EPages } from "utils/EPages";
 import { Trans } from "@lingui/macro";
+import Locales from "i18n/Locales";
+import { ParsedUrlQuery } from "querystring";
 
 interface IProps {
     posts: IBlogPost[];
 }
 
-const BlogIndex = ({posts}: IProps) => {
+interface IParams extends ParsedUrlQuery {
+    locale: string;
+}
+
+const BlogIndex = ({ posts }: IProps) => {
     return (
         <>
             <Head>
-                    <title>Blog | Francesc Pellicero</title>
+                <title>Blog | Francesc Pellicero</title>
             </Head>
 
             <Container>
@@ -47,14 +53,21 @@ const BlogIndex = ({posts}: IProps) => {
 
 BlogIndex.PAGE_TYPE = EPages.Blog;
 
-export const getStaticProps: GetServerSideProps<IProps> = async ({locale}) => {
-    const posts = await getAllPosts([locale]);
+export const getStaticProps: GetServerSideProps<IProps, IParams> = async ({ params }) => {
+    const posts = await getAllPosts([params.locale]);
 
     return {
         props: {
             posts,
         }
     };
-} 
+}
+
+export const getStaticPaths: GetStaticPaths<IParams> = async () => {
+    return {
+        paths: Locales.map((locale) => ({ params: { locale } })),
+        fallback: false,
+    }
+}
 
 export default BlogIndex;

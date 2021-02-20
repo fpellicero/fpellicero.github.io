@@ -35,3 +35,5 @@ yarn-error.log*
 
 # compiled translations
 src/locales/*.js
+src/locales/*.mo
+

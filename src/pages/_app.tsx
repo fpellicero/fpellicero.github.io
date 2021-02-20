@@ -11,14 +11,17 @@ import { useRouter } from "next/router";
 
 import { messages as EN } from "locales/en";
 import { messages as ES } from "locales/es";
+import { DefaultLocale } from "i18n/Locales";
 
 i18n.load("es", ES);
 i18n.load("en", EN);
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const { locale } = useRouter();
-  i18n.activate(locale);
+function MyApp({ Component, pageProps, router }: AppProps) {
+  const locale = router.query["locale"] as string;
+  i18n.activate(locale || DefaultLocale);
+  
   usePageviewTracking();
+  
   return (
     <I18nProvider i18n={i18n} >
       <Layout

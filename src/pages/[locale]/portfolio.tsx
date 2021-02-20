@@ -2,6 +2,8 @@ import { Trans } from "@lingui/macro";
 import PortfolioCard from "components/Portfolio/PortfolioCard";
 import portfolioItems from "data/Portfolio/portfolio";
 import { motion } from "framer-motion";
+import Locales from "i18n/Locales";
+import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import * as React from "react";
 import { Content, Section, Heading } from "react-bulma-components";
@@ -49,5 +51,21 @@ const PortfolioPage = () => {
 }
 
 PortfolioPage.PAGE_TYPE = EPages.Portfolio;
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+    return {
+        props: {
+            locale: params.locale,
+        }
+    }
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+    return {
+        paths: Locales.map((locale) => ({ params: { locale } })),
+        fallback: false,
+    }
+}
+
 
 export default PortfolioPage;
