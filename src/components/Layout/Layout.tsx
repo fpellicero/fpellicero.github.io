@@ -8,9 +8,10 @@ import NavigationBar from "./NavigationBar/NavigationBar"
 import { EPages } from "utils/EPages"
 import useDarkMode from "dark-mode-react-hook";
 import { useRouter } from "next/router";
-import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import ThemeSelector from "./ThemeSelector/ThemeSelector";
 import { Trans } from "@lingui/macro";
+import LocaleSelector from "./LocaleSelector/LocaleSelector";
 
 
 interface ILayoutProps {
@@ -19,7 +20,7 @@ interface ILayoutProps {
 }
 
 const Layout: React.FC<ILayoutProps> = ({ children, currentPage }: ILayoutProps) => {
-    const { pathname } = useRouter();
+    const { asPath } = useRouter();
     const [darkMode, setDarkMode] = useDarkMode({ exceptions: ["pre"] });
     return (
         <>
@@ -37,11 +38,12 @@ const Layout: React.FC<ILayoutProps> = ({ children, currentPage }: ILayoutProps)
                     widescreen={{ size: 8 }}
                 >
                     <Box className="main-container__box">
+                        <LocaleSelector />
                         <ThemeSelector darkMode={darkMode} setDarkMode={setDarkMode} />
                         <NavigationBar currentPage={currentPage} />
                         <AnimatePresence initial={false} exitBeforeEnter={true} >
                             <motion.div
-                                key={`layout-${pathname}`}
+                                key={`layout-${asPath}`}
                                 className={"main-container__content"}
                                 initial={{ opacity: 0, translateY: 25 }}
                                 animate={{ opacity: 1, translateY: 0 }}
