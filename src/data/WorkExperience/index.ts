@@ -1,28 +1,51 @@
 import LogoTiendeo from "./Tiendeo/tiendeo_icon.png";
-import TiendeoLeadDescription from "./Tiendeo/lead.html";
-import TiendeoSeniorDescription from "./Tiendeo/senior.html";
-import TiendeoJuniorDescription from "./Tiendeo/junior.html";
-import AtrapaloDescription from "./atrapalo.html";
-import EsdiDescription from "./esdi.html";
-import EquilibriDescription from "./equilibri.html";
+
+import TiendeoLeadDescriptionEN from "./Tiendeo/lead.en.html";
+import TiendeoLeadDescriptionES from "./Tiendeo/lead.es.html";
+
+import TiendeoSeniorDescriptionEN from "./Tiendeo/senior.en.html";
+import TiendeoSeniorDescriptionES from "./Tiendeo/senior.es.html";
+
+import TiendeoJuniorDescriptionEN from "./Tiendeo/junior.en.html";
+import TiendeoJuniorDescriptionES from "./Tiendeo/junior.es.html";
+
+import AtrapaloDescriptionEN from "./atrapalo.en.html";
+import AtrapaloDescriptionES from "./atrapalo.es.html";
+
+import EsdiDescriptionES from "./esdi.es.html";
+import EsdiDescriptionEN from "./esdi.en.html";
+
+import EquilibriDescriptionEN from "./equilibri.en.html";
+import EquilibriDescriptionES from "./equilibri.es.html";
+
+type LocalizedValue = {
+    es: string;
+    en: string;
+}
 
 export interface IWorkExperienceItem {
     startDate: string;
-    title: string;
+    title: LocalizedValue;
     subtitle: string;
     marker: {
         color: "primary" | "danger" | "warning" | "success";
         image?: string;
     }
-    details: string;
+    details: LocalizedValue;
 }
 
 const workExperience: IWorkExperienceItem[] = [
     {
         "startDate": "October 2018",
-        "title": "Lead Frontend Engineer",
+        "title": {
+            "en": "Engineering Team Lead",
+            "es": "Líder de equipo"
+        },
         "subtitle": "Tiendeo Web Marketing S.L",
-        "details": TiendeoLeadDescription,
+        "details": {
+            "en": TiendeoLeadDescriptionEN,
+            "es": TiendeoLeadDescriptionES,
+        },
         "marker": {
             "image": LogoTiendeo,
             "color": "danger"
@@ -30,9 +53,15 @@ const workExperience: IWorkExperienceItem[] = [
     },
     {
         "startDate": "July 2018",
-        "title": "Senior Frontend Developer",
+        "title": {
+            "en": "Senior Frontend Developer",
+            "es": "Desarrollador Frontend Senior"
+        },
         "subtitle": "Tiendeo Web Marketing S.L",
-        "details": TiendeoSeniorDescription,
+        "details": {
+            "en": TiendeoSeniorDescriptionEN,
+            "es": TiendeoSeniorDescriptionES
+        },
         "marker": {
             "image": LogoTiendeo,
             "color": "danger"
@@ -40,27 +69,45 @@ const workExperience: IWorkExperienceItem[] = [
     },
     {
         "startDate": "January 2018",
-        "title": "Frontend Developer",
+        "title": {
+            "en": "Frontend Developer",
+            "es": "Desarrollador Frontend"
+        },
         "subtitle": "Atrápalo S.L",
-        "details": AtrapaloDescription,
+        "details": {
+            "en": AtrapaloDescriptionEN,
+            "es": AtrapaloDescriptionES
+        },
         "marker": {
             "color": "warning"
         }
     },
     {
         "startDate": "September 2017 - December 2018",
-        "title": "Frontend Teacher",
+        "title": {
+            "en": "Frontend Teacher",
+            "es": "Profesor de Desarrollo Frontend"
+        },
         "subtitle": "ESDi School of Design",
-        "details": EsdiDescription,
+        "details": {
+            "en": EsdiDescriptionEN,
+            "es": EsdiDescriptionES
+        },
         "marker": {
             "color": "success"
         }
     },
     {
         "startDate": "September 2014",
-        "title": "Junior Software Developer",
+        "title": {
+            "en": "Junior Software Developer",
+            "es": "Desarrollador de Software Junior"
+        },
         "subtitle": "Tiendeo Web Marketing S.L",
-        "details": TiendeoJuniorDescription,
+        "details": {
+            "en": TiendeoJuniorDescriptionEN,
+            "es": TiendeoJuniorDescriptionES
+        },
         "marker": {
             "image": LogoTiendeo,
             "color": "danger"
@@ -68,9 +115,15 @@ const workExperience: IWorkExperienceItem[] = [
     },
     {
         "startDate": "February 2013",
-        "title": "Software Developer Intern",
+        "title": {
+            en: "Software Developer Intern",
+            es: "Becario"
+        },
         "subtitle": "Fundació Equilibi",
-        "details": EquilibriDescription,
+        "details": {
+            "en": EquilibriDescriptionEN,
+            "es": EquilibriDescriptionES
+        },
         "marker": {
             "color": "primary"
         }

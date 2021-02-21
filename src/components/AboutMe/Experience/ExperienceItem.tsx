@@ -3,6 +3,7 @@ import Timeline from "../../Timeline/Timeline"
 import { Image } from "react-bulma-components"
 import clsx from "clsx"
 import { IWorkExperienceItem } from "data/WorkExperience"
+import { useLocale } from "i18n/LocaleProvider"
 
 const ExperienceItem = ({
     startDate,
@@ -11,6 +12,7 @@ const ExperienceItem = ({
     marker,
     details,
 }: IWorkExperienceItem) => {
+    const locale = useLocale();
     const getMarker = () => (
         <Timeline.Marker
             // @ts-ignore
@@ -27,10 +29,10 @@ const ExperienceItem = ({
             marker={getMarker()}
         >
             <p className="heading">{startDate}</p>
-            <div className="is-size-6">{title}</div>
+            <div className="is-size-6">{title[locale]}</div>
             <div className="is-size-7">{subtitle}</div>
-            <Timeline.Item.Details title={title} subtitle={subtitle}>
-                <div dangerouslySetInnerHTML={{ __html: details }} style={{ textAlign: "left" }} />
+            <Timeline.Item.Details title={title[locale]} subtitle={subtitle}>
+                <div dangerouslySetInnerHTML={{ __html: details[locale] }} style={{ textAlign: "left" }} />
             </Timeline.Item.Details>
         </Timeline.Item>
     )
