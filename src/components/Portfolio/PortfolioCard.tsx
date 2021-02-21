@@ -3,6 +3,7 @@ import { faGlobe } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Trans } from "@lingui/macro"
 import { IPortfolioItem } from "data/Portfolio/portfolio"
+import { useLocale } from "i18n/LocaleProvider"
 import * as React from "react"
 import { Columns, Card, Heading } from "react-bulma-components"
 
@@ -13,6 +14,7 @@ const PortfolioCard = ({
     publicUrl,
     repositoryUrl,
 }: IPortfolioItem) => {
+    const locale = useLocale();
     return (
         <Card className="portfolio-card">
             <Card.Image size="4by3" src={image} />
@@ -20,7 +22,7 @@ const PortfolioCard = ({
                 <Heading size={4} textAlignment="centered">
                     {name}
                 </Heading>
-                {description.map((p, i) => (
+                {description[locale].map((p, i) => (
                     <p
                         key={i}
                         className="portfolio-card__description"

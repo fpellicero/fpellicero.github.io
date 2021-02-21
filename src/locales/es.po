@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: \n"
 "MIME-Version: 1.0\n"
 
-#: src/components/AboutMe/Summary/Summary.tsx:7
+#: src/components/AboutMe/Summary/Summary.tsx:11
 msgid "<0><1>Passionate software developer, Javascript lover and team player. I'm always looking for technical challenges, and I value a team with strong bonds over anything else.</1><2>Big advocate of Keeping Things Simple, but I love to over-engineer things in my free time to push my boundaries. Trying to deliver the best quality software possible. Never satisfied with the status-quo, I question things and try to improve them constantly.</2><3>Mountain biker. Salsa dancer. Book reader. Videogame player. One day I'll learn to play guitar (🤞).</3></0>"
 msgstr "<0><1>Desarrollador de software apasionado, amante del JavaScript y jugador de equipo. Siempre estoy buscando un reto tecnológico, y valoro el trabajo en equipo por encima de todo.</1><2> Defensor de \"Keeping Things Simple\", aunque me gusta sobreingenierizar cosas en mi tiempo libre. Intento entregar siempre el software de la mejor calidad. Nunca satisfecho con el status quo, intento cuestionarme las soluciones para mejorar constantemente.</2><3>Ciclista de montaña. Bailarín de Salsa. Lector de libros. Jugador de Videojuegos. Algún día aprenderé a tocar la guitarra(🤞).</3></0>"
 
@@ -46,11 +46,15 @@ msgstr "<0>Mis proyectos</0>"
 msgid "<0>Welcome to my personal blog!</0><1>Here I write about stuff that I care about, mostly about frontend technologies. I also like to write tutorials, so good chance you'll find a few ones if you keep scrolling.</1>"
 msgstr "<0>¡Bienvenido a mi blog personal!</0><1>Aquí escribo sobre cosas que me interesan, mayoritariamente sobre software y tecnologías frontend. Me gusta escribir tutoriales, así que te animo a seguir mirando a ver si hay alguno que te interese.</1>"
 
+#: src/components/AboutMe/Summary/Summary.tsx:7
+msgid "About me"
+msgstr "Sobre mi"
+
 #: src/pages/[locale]/blog/[slug].tsx:33
 msgid "Back to Index"
 msgstr "Volver al índice"
 
-#: src/components/Portfolio/PortfolioCard.tsx:31
+#: src/components/Portfolio/PortfolioCard.tsx:33
 msgid "Demo"
 msgstr "Demo"
 
@@ -58,11 +62,11 @@ msgstr "Demo"
 msgid "Education"
 msgstr "Educación"
 
-#: src/components/AboutMe/Experience/Experience.tsx:10
+#: src/components/AboutMe/Experience/Experience.tsx:12
 msgid "Experience"
 msgstr "Experiencia"
 
-#: src/pages/404.tsx:33
+#: src/components/Redirect/Redirect.tsx:29
 msgid "Looks like this page does not exist yet."
 msgstr "Parece que esta página no existe todavía."
 
@@ -70,7 +74,7 @@ msgstr "Parece que esta página no existe todavía."
 msgid "My work"
 msgstr "Mis proyectos"
 
-#: src/components/AboutMe/Experience/Experience.tsx:16
+#: src/components/AboutMe/Experience/Experience.tsx:18
 msgid "Present"
 msgstr "Hoy"
 
@@ -82,16 +86,26 @@ msgstr "Ver menos"
 msgid "See more"
 msgstr "Ver más"
 
-#: src/components/Portfolio/PortfolioCard.tsx:21
+#: src/components/AboutMe/Education/Education.tsx:38
+msgid "September 2009 - June 2014"
+msgstr "Septiembre 2009 - Junio 2014"
+
+#: src/components/AboutMe/Education/Education.tsx:45
+msgid "September 2013 - January 2014"
+msgstr "Septiembre 2013 - Enero 2014"
+
+#: src/components/AboutMe/Education/Education.tsx:35
+#: src/components/AboutMe/Education/Education.tsx:42
+msgid "Softwaree Engineering Degree"
+msgstr "Ingeniería Informática"
+
+#: src/components/Portfolio/PortfolioCard.tsx:23
 msgid "Source"
 msgstr "Código"
 
-#: src/components/AboutMe/Experience/Experience.tsx:22
+#: src/components/AboutMe/Experience/Experience.tsx:24
 msgid "Start"
 msgstr "Inicio"
-
-#~ msgid "About me"
-#~ msgstr "Sobre mi"
 
 #~ msgid "Blog"
 #~ msgstr "Blog"

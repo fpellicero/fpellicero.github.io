@@ -16,7 +16,7 @@ import { Trans } from "@lingui/macro"
 interface IEducationItem {
     logo: string
     heading: string
-    subheading: string
+    subheading: React.ReactNode
     children?: React.ReactNode
 }
 const EducationItem = ({
@@ -60,20 +60,32 @@ const Education = () => {
                 <EducationItem
                     logo={logoUpc}
                     heading={"Universitat Politècnica de Catalunya"}
-                    subheading={"Softwaree Engineering Degree"}
+                    subheading={
+                        <Trans>
+                            Softwaree Engineering Degree
+                        </Trans>
+                    }
                     children={
                         <p className="has-text-right">
-                            September 2009 - June 2014
+                            <Trans>
+                                September 2009 - June 2014
+                            </Trans>
                         </p>
                     }
                 />
                 <EducationItem
                     logo={logoLeeds}
                     heading={"Leeds Beckett University"}
-                    subheading={"Softwaree Engineering Degree"}
+                    subheading={
+                        <Trans>
+                            Softwaree Engineering Degree
+                        </Trans>
+                    }
                     children={
                         <p className="has-text-right">
-                            September 2013 - January 2014
+                            <Trans>
+                                September 2013 - January 2014
+                            </Trans>
                         </p>
                     }
                 />

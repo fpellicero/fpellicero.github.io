@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/AboutMe/Summary/Summary.tsx:7
+#: src/components/AboutMe/Summary/Summary.tsx:11
 msgid "<0><1>Passionate software developer, Javascript lover and team player. I'm always looking for technical challenges, and I value a team with strong bonds over anything else.</1><2>Big advocate of Keeping Things Simple, but I love to over-engineer things in my free time to push my boundaries. Trying to deliver the best quality software possible. Never satisfied with the status-quo, I question things and try to improve them constantly.</2><3>Mountain biker. Salsa dancer. Book reader. Videogame player. One day I'll learn to play guitar (🤞).</3></0>"
 msgstr ""
 
@@ -45,11 +45,15 @@ msgstr ""
 msgid "<0>Welcome to my personal blog!</0><1>Here I write about stuff that I care about, mostly about frontend technologies. I also like to write tutorials, so good chance you'll find a few ones if you keep scrolling.</1>"
 msgstr ""
 
+#: src/components/AboutMe/Summary/Summary.tsx:7
+msgid "About me"
+msgstr ""
+
 #: src/pages/[locale]/blog/[slug].tsx:33
 msgid "Back to Index"
 msgstr ""
 
-#: src/components/Portfolio/PortfolioCard.tsx:31
+#: src/components/Portfolio/PortfolioCard.tsx:33
 msgid "Demo"
 msgstr ""
 
@@ -57,11 +61,11 @@ msgstr ""
 msgid "Education"
 msgstr ""
 
-#: src/components/AboutMe/Experience/Experience.tsx:10
+#: src/components/AboutMe/Experience/Experience.tsx:12
 msgid "Experience"
 msgstr ""
 
-#: src/pages/404.tsx:33
+#: src/components/Redirect/Redirect.tsx:29
 msgid "Looks like this page does not exist yet."
 msgstr ""
 
@@ -69,7 +73,7 @@ msgstr ""
 msgid "My work"
 msgstr ""
 
-#: src/components/AboutMe/Experience/Experience.tsx:16
+#: src/components/AboutMe/Experience/Experience.tsx:18
 msgid "Present"
 msgstr ""
 
@@ -81,10 +85,23 @@ msgstr ""
 msgid "See more"
 msgstr ""
 
-#: src/components/Portfolio/PortfolioCard.tsx:21
+#: src/components/AboutMe/Education/Education.tsx:38
+msgid "September 2009 - June 2014"
+msgstr ""
+
+#: src/components/AboutMe/Education/Education.tsx:45
+msgid "September 2013 - January 2014"
+msgstr ""
+
+#: src/components/AboutMe/Education/Education.tsx:35
+#: src/components/AboutMe/Education/Education.tsx:42
+msgid "Softwaree Engineering Degree"
+msgstr ""
+
+#: src/components/Portfolio/PortfolioCard.tsx:23
 msgid "Source"
 msgstr ""
 
-#: src/components/AboutMe/Experience/Experience.tsx:22
+#: src/components/AboutMe/Experience/Experience.tsx:24
 msgid "Start"
 msgstr ""

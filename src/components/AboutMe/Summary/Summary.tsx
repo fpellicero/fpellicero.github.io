@@ -5,7 +5,11 @@ import { Content, Heading } from "react-bulma-components"
 const Summary = () => {
     return (
         <Content textAlignment="justified">
-            <Heading renderAs="h2">About me</Heading>
+            <Heading renderAs="h2">
+                <Trans>
+                    About me
+                </Trans>
+            </Heading>
             <Trans>
                 <div>
                     <p>
