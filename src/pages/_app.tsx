@@ -19,7 +19,12 @@ i18n.load("en", EN);
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const locale = router.query["locale"] as string;
+
   i18n.activate(locale || DefaultLocale);
+
+  React.useEffect(() => {
+    window.localStorage.setItem("locale", locale);
+  }, [locale]);
 
   usePageviewTracking();
 
