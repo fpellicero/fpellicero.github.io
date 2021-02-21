@@ -2,10 +2,11 @@ import path from "path";
 import fs from "fs/promises";
 import matter from "gray-matter";
 import readingTime from "reading-time";
-import { format } from "timeago.js";
 import renderToString from 'next-mdx-remote/render-to-string';
 import MDXProviderComponent from "components/Blog/MDXProvider";
 import rehypeHighlight from "@mapbox/rehype-prism";
+import moment from "moment";
+import "moment/locale/es";
 
 const POSTS_FOLDER = path.resolve(process.cwd(), "src/data/Blog");
 
@@ -19,24 +20,34 @@ export interface IBlogPost {
     readingTime: string;
 }
 
-export async function getPost(slug: string): Promise<IBlogPost> {
+function formatReadingTime(minutes: number, locale: string) {
+    if (locale === "es") {
+        return `${Math.ceil(minutes)} minutos`
+    }
+
+    return `${Math.ceil(minutes)} minutes`;
+}
+
+export async function getPost(slug: string, locale: string): Promise<IBlogPost> {
     const realSlug = slug.replace(/.md$/, "");
-    const fileContent = await fs.readFile(path.join(POSTS_FOLDER, `${realSlug}.md`), "utf-8");
+    const fileContent = await fs.readFile(path.join(POSTS_FOLDER, `${realSlug}.${locale}.md`), "utf-8");
     const { data, content } = matter(fileContent);    
+
+
     
     return {
         title: data["title"],
         slug: realSlug,
         date: data["date"].toString(),
-        dateRelative: format(data["date"]),
+        dateRelative: moment(data["date"]).format("D/MM/YYYY"),
         excerpt: data["excerpt"],
         status: data["status"],
-        readingTime: readingTime(content).text,
+        readingTime: formatReadingTime(readingTime(content).minutes, locale),
     };
 }
 
-export async function getPostAsHtml(slug: string) {
-    const fileContent = await fs.readFile(path.join(POSTS_FOLDER, `${slug}.md`), "utf-8");
+export async function getPostAsHtml(slug: string, locale: string) {
+    const fileContent = await fs.readFile(path.join(POSTS_FOLDER, `${slug}.${locale}.md`), "utf-8");
     const { content } = matter(fileContent);
 
     const result = await renderToString(
@@ -54,8 +65,18 @@ export async function getPostAsHtml(slug: string) {
     return result;
 }
 
-export async function getAllPosts() {
+export async function getAllPosts(locales: string[]) {
     const blogFiles = await fs.readdir(POSTS_FOLDER);
+
+    const slugs = [...new Set(blogFiles.map((fileName) => fileName.split(".")[0]))];
     
-    return Promise.all(blogFiles.map(getPost));
+    let posts: Array<IBlogPost & {locale: string}> = [];
+    for (const slug of slugs) {
+        for (const locale of locales) {
+            const post = await getPost(slug, locale);
+            posts.push({...post, locale});
+        }
+    }
+
+    return posts;
 }

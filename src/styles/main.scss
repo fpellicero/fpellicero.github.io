@@ -21,6 +21,9 @@
 @import "~bulma-timeline/src/sass/index.sass";
 
 @import "./ThemeSelector.scss";
+@import "../components/Loader/Loader.scss";
+@import "./error-page.scss";
+@import "./locale-selector.scss";
 
 .modal-background {
     background: rgba(230, 230, 230, .86);

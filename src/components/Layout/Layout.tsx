@@ -8,8 +8,10 @@ import NavigationBar from "./NavigationBar/NavigationBar"
 import { EPages } from "utils/EPages"
 import useDarkMode from "dark-mode-react-hook";
 import { useRouter } from "next/router";
-import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import ThemeSelector from "./ThemeSelector/ThemeSelector";
+import { Trans } from "@lingui/macro";
+import LocaleSelector from "./LocaleSelector/LocaleSelector";
 
 
 interface ILayoutProps {
@@ -18,8 +20,8 @@ interface ILayoutProps {
 }
 
 const Layout: React.FC<ILayoutProps> = ({ children, currentPage }: ILayoutProps) => {
-    const { pathname } = useRouter();
-    const [darkMode, setDarkMode] = useDarkMode({exceptions: ["pre"]});
+    const { asPath } = useRouter();
+    const [darkMode, setDarkMode] = useDarkMode({ exceptions: ["pre"] });
     return (
         <>
             <Head>
@@ -36,11 +38,12 @@ const Layout: React.FC<ILayoutProps> = ({ children, currentPage }: ILayoutProps)
                     widescreen={{ size: 8 }}
                 >
                     <Box className="main-container__box">
+                        <LocaleSelector />
                         <ThemeSelector darkMode={darkMode} setDarkMode={setDarkMode} />
                         <NavigationBar currentPage={currentPage} />
                         <AnimatePresence initial={false} exitBeforeEnter={true} >
                             <motion.div
-                                key={`layout-${pathname}`}
+                                key={`layout-${asPath}`}
                                 className={"main-container__content"}
                                 initial={{ opacity: 0, translateY: 25 }}
                                 animate={{ opacity: 1, translateY: 0 }}
@@ -51,26 +54,29 @@ const Layout: React.FC<ILayoutProps> = ({ children, currentPage }: ILayoutProps)
                                 {children}
                                 <Footer>
                                     <Content textAlignment="centered">
-                                        <div>
-                                            Built with <FontAwesomeIcon icon={faHeart} width="1rem" />{" "}
+                                        <Trans>
+
+                                            <div>
+                                                Built with <FontAwesomeIcon icon={faHeart} width="1rem" />{" "}
                                     with{" "}
-                                            <a
-                                                href="https://nextjs.org/"
-                                                target="_blank"
-                                            >
-                                                NextJS
+                                                <a
+                                                    href="https://nextjs.org/"
+                                                    target="_blank"
+                                                >
+                                                    NextJS
                                     </a>{" "}
                                     and{" "}
-                                            <a href="https://bulma.io" target="_blank">
-                                                Bulma.io
+                                                <a href="https://bulma.io" target="_blank">
+                                                    Bulma.io
                                     </a>
-                                        </div>
-                                        <div>
-                                            You can check the source for this page on{" "}
-                                            <a href="https://github.com/fpellicero/fpellicero.github.io">
-                                                <FontAwesomeIcon icon={faGithub} width="1rem" /> Github
+                                            </div>
+                                            <div>
+                                                You can check the source for this page on{" "}
+                                                <a href="https://github.com/fpellicero/fpellicero.github.io">
+                                                    <FontAwesomeIcon icon={faGithub} width="1rem" /> Github
                                     </a>
-                                        </div>
+                                            </div>
+                                        </Trans>
                                     </Content>
                                 </Footer>
                             </motion.div>

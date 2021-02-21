@@ -1,10 +1,10 @@
 import Redirect from "components/Redirect/Redirect";
 import * as React from "react";
 
-function PortfolioPage() {
+function BlogPage() {
     return (
-        <Redirect to="/portfolio" />
+        <Redirect to="/blog" />
     )
 }
 
-export default PortfolioPage;
+export default BlogPage;

@@ -10,6 +10,9 @@ import Head from "next/head";
 import { EPages } from "utils/EPages";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Trans } from "@lingui/macro";
+import Locales from "i18n/Locales";
+import LocalizedLink from "i18n/LocalizedLink";
 
 interface IProps {
     post: IBlogPost;
@@ -17,6 +20,7 @@ interface IProps {
 }
 
 interface IParams extends ParsedUrlQuery {
+    locale: string;
     slug: string;
 }
 
@@ -25,7 +29,6 @@ const BlogPostPage = ({source, post}: IProps) => {
         <>
             <Head>
                 <title>{post.title} | Francesc Pellicero</title>
-                <link href="https://unpkg.com/prismjs@1.23.0/themes/prism-okaidia.css" rel="stylesheet" />
             </Head>
             <MDXProviderComponent>
                 <Section>
@@ -34,12 +37,15 @@ const BlogPostPage = ({source, post}: IProps) => {
                         {hydrate(source)}
                     </Content>
                     <div style={{textAlign: "center"}}>
-                        <Link href="/blog">Back to Index</Link>
+                        <LocalizedLink href="/blog">
+                            <Trans>
+                                Back to Index
+                            </Trans>
+                        </LocalizedLink>
                     </div>
                 </Section>
+                <link href="https://unpkg.com/prismjs@1.23.0/themes/prism-okaidia.css" rel="stylesheet" />
             </MDXProviderComponent>
-            {/* <script src="https://unpkg.com/prismjs@1.23.0/components/prism-core.min.js"></script> */}
-            {/* <script src="https://unpkg.com/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script> */}
         </>
     );
 }
@@ -47,8 +53,8 @@ const BlogPostPage = ({source, post}: IProps) => {
 BlogPostPage.PAGE_TYPE = EPages.Blog;
 
 export const getStaticProps: GetStaticProps<IProps, IParams> = async ({ params }) => {
-    const post = await getPost(params.slug);
-    const content = await getPostAsHtml(params.slug);
+    const post = await getPost(params.slug, params.locale);
+    const content = await getPostAsHtml(params.slug, params.locale);
 
     return {
         props: {
@@ -59,12 +65,13 @@ export const getStaticProps: GetStaticProps<IProps, IParams> = async ({ params }
 }
 
 export const getStaticPaths: GetStaticPaths<IParams> = async () => {
-    const posts = await getAllPosts();
+    const posts = await getAllPosts(Locales);
 
     return {
-        paths: posts.map(({slug}) => ({
+        paths: posts.map(({slug, locale}) => ({
             params: {
                 slug,
+                locale,
             },
         })),
         fallback: false,

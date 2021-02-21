@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faClock } from "@fortawesome/free-solid-svg-icons";
 import { IBlogPost } from "services/$Posts";
 import { motion } from "framer-motion";
+import LocalizedLink from "i18n/LocalizedLink";
 
 const BlogPostItem = (post: IBlogPost) => {
     const {
@@ -17,7 +18,7 @@ const BlogPostItem = (post: IBlogPost) => {
         <article style={{ marginBottom: "3em" }}>
             <header>
                 <h3>
-                    <Link href={`/blog/${slug}`}>{title}</Link>
+                    <LocalizedLink href={`/blog/${slug}`}>{title}</LocalizedLink>
                 </h3>
                 <small style={{ position: "relative", top: "-1em" }}>
                     <span>

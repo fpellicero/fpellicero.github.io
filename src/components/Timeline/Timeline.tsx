@@ -9,6 +9,7 @@ import {
 } from "react-bulma-components"
 import Collapse from "Transitions/Collapse/Collapse"
 import { motion } from "framer-motion"
+import { Trans } from "@lingui/macro"
 
 interface ITimelineProps extends React.HTMLProps<HTMLDivElement> {}
 const Timeline = ({ children, className, ...props }: ITimelineProps) => (
@@ -93,7 +94,16 @@ const TimelineItemDetails = ({ title, subtitle, children }) => {
                 text
                 onClick={() => setIsOpen(!isOpen)}
             >
-                {isOpen ? "See less" : "See more"}
+                {isOpen && (
+                    <Trans>
+                        See less
+                    </Trans>
+                )}
+                {!isOpen && (
+                    <Trans>
+                        See more
+                    </Trans>
+                )}
             </Button>
             {renderDetail()}
         </>

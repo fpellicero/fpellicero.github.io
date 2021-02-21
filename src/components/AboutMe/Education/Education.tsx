@@ -11,11 +11,12 @@ import {
 } from "react-bulma-components"
 import logoUpc from "./logo-upc.png"
 import logoLeeds from "./logo-leeds-metropolitan.png"
+import { Trans } from "@lingui/macro"
 
 interface IEducationItem {
     logo: string
     heading: string
-    subheading: string
+    subheading: React.ReactNode
     children?: React.ReactNode
 }
 const EducationItem = ({
@@ -50,25 +51,41 @@ const EducationItem = ({
 const Education = () => {
     return (
         <>
-            <Heading size={3}>Education</Heading>
+            <Heading size={3}>
+                <Trans>
+                    Education
+                </Trans>
+            </Heading>
             <Columns>
                 <EducationItem
                     logo={logoUpc}
                     heading={"Universitat Politècnica de Catalunya"}
-                    subheading={"Softwaree Engineering Degree"}
+                    subheading={
+                        <Trans>
+                            Softwaree Engineering Degree
+                        </Trans>
+                    }
                     children={
                         <p className="has-text-right">
-                            September 2009 - June 2014
+                            <Trans>
+                                September 2009 - June 2014
+                            </Trans>
                         </p>
                     }
                 />
                 <EducationItem
                     logo={logoLeeds}
                     heading={"Leeds Beckett University"}
-                    subheading={"Softwaree Engineering Degree"}
+                    subheading={
+                        <Trans>
+                            Softwaree Engineering Degree
+                        </Trans>
+                    }
                     children={
                         <p className="has-text-right">
-                            September 2013 - January 2014
+                            <Trans>
+                                September 2013 - January 2014
+                            </Trans>
                         </p>
                     }
                 />
