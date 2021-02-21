@@ -1,10 +1,8 @@
-$top: 5px;
-$right: 50px;
 
 .locale-selector {
     position: absolute;
-    top: $top;
-    right: $right;
+    top: 5px;
+    left: 5px;
     height: 32px;
     width: 32px;
     cursor: pointer;
@@ -18,7 +16,7 @@ $right: 50px;
         position: absolute;
         z-index: 10;
         top: 0;
-        right: 45px;
+        left: 0;
         height: 74px;
         width: 42px;
         padding: 5px;
