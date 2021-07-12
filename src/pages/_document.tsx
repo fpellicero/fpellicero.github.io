@@ -13,6 +13,7 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <div id="choice-footer-msg"></div>
         </body>
       </Html>
     )
