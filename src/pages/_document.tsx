@@ -1,4 +1,5 @@
 import { GtagGlobalScript } from 'components/Analytics/GoogleAnalytics'
+import { GoogleTagManager } from 'components/TagManager/GoogleTagManager';
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
@@ -6,6 +7,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+            <GoogleTagManager />
             <GtagGlobalScript />
         </Head>
         <body>
