@@ -47,7 +47,7 @@ const workExperience: IWorkExperienceItem[] = [
             "es": TiendeoLeadDescriptionES,
         },
         "marker": {
-            "image": LogoTiendeo,
+            "image": LogoTiendeo.src,
             "color": "danger"
         }
     },
@@ -63,7 +63,7 @@ const workExperience: IWorkExperienceItem[] = [
             "es": TiendeoSeniorDescriptionES
         },
         "marker": {
-            "image": LogoTiendeo,
+            "image": LogoTiendeo.src,
             "color": "danger"
         }
     },
@@ -109,7 +109,7 @@ const workExperience: IWorkExperienceItem[] = [
             "es": TiendeoJuniorDescriptionES
         },
         "marker": {
-            "image": LogoTiendeo,
+            "image": LogoTiendeo.src,
             "color": "danger"
         }
     },

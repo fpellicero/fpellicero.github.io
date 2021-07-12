@@ -58,7 +58,7 @@ const Education = () => {
             </Heading>
             <Columns>
                 <EducationItem
-                    logo={logoUpc}
+                    logo={logoUpc.src}
                     heading={"Universitat Politècnica de Catalunya"}
                     subheading={
                         <Trans>
@@ -74,7 +74,7 @@ const Education = () => {
                     }
                 />
                 <EducationItem
-                    logo={logoLeeds}
+                    logo={logoLeeds.src}
                     heading={"Leeds Beckett University"}
                     subheading={
                         <Trans>

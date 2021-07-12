@@ -38,7 +38,7 @@ const NavigationBar = ({ currentPage }: IProps) => {
                 <div className="navigation-bar__logo-wrapper">
                     <Image
                         className="navigation-bar__logo"
-                        src={profileImage}
+                        src={profileImage.src}
                     />
                 </div>
                 <Tabs className="is-centered is-fullwidth">

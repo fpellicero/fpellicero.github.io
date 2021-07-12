@@ -19,7 +19,7 @@ export interface IPortfolioItem {
 const portfolioItems: IPortfolioItem[] = [
     {
         "name": "Rough Tetris",
-        "image": tetrisImage,
+        "image": tetrisImage.src,
         "repositoryUrl": "https://github.com/fpellicero/rough-tetris",
         "publicUrl": "https://fpellicero.github.io/rough-tetris/",
         "description": {
@@ -33,7 +33,7 @@ const portfolioItems: IPortfolioItem[] = [
     },
     {
         "name": "React Bottom Drawer",
-        "image": reactBottomDrawerImage,
+        "image": reactBottomDrawerImage.src,
         "repositoryUrl": "https://github.com/fpellicero/react-bottom-drawer",
         "publicUrl": "https://codesandbox.io/s/blissful-architecture-kuci5",
         "description": {
@@ -47,7 +47,7 @@ const portfolioItems: IPortfolioItem[] = [
     },
     {
         "name": "Pixel Piano",
-        "image": pixelPianoImage,
+        "image": pixelPianoImage.src,
         "repositoryUrl": "https://github.com/fpellicero/pixel-piano",
         "publicUrl": "https://fpellicero.github.io/pixel-piano",
         "description": {
@@ -61,7 +61,7 @@ const portfolioItems: IPortfolioItem[] = [
     },
     {
         "name": "Arkapong",
-        "image": arkapongImage,
+        "image": arkapongImage.src,
         "repositoryUrl": "https://github.com/fpellicero/arkapong",
         "publicUrl": "https://fpellicero.github.io/arkapong/",
         "description": {
@@ -75,7 +75,7 @@ const portfolioItems: IPortfolioItem[] = [
     },
     {
         "name": "Flappy Dragon",
-        "image": flappyDragonImage,
+        "image": flappyDragonImage.src,
         "repositoryUrl": "https://github.com/fpellicero/flappy_dragon",
         "publicUrl": "https://flappy-dragon.herokuapp.com",
         "description": {
@@ -89,7 +89,7 @@ const portfolioItems: IPortfolioItem[] = [
     },
     {
         "name": "Untitled Game",
-        "image": untitledGameImage,
+        "image": untitledGameImage.src,
         "repositoryUrl": "",
         "publicUrl": "https://javascript-arcade-game.herokuapp.com/",
         "description": {
