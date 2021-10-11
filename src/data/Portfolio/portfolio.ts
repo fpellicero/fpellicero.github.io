@@ -84,8 +84,8 @@ const portfolioItems: IPortfolioItem[] = [
   {
     name: "Untitled Game",
     image: untitledGameImage.src,
-    repositoryUrl: "",
-    publicUrl: "https://javascript-arcade-game.herokuapp.com/",
+    repositoryUrl: "https://github.com/fpellicero/javascript-snakey",
+    publicUrl: "https://fpellicero.github.io/javascript-snakey",
     description: {
       en: [
         "A simple top-down shooter built in plain old ES5 and no framework.",
